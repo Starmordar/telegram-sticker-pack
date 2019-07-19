@@ -5,7 +5,7 @@ const routes = require("./routes/router");
 const { port, bot_token, chat_id } = require("./config/config");
 const botUrl = "https://api.telegram.org/bot";
 
-const siteUrl = "http://167.71.13.201:4444/";
+const siteUrl = `http://167.71.13.201:${port}/`;
 
 const { createSeamlessLogin } = require("./routes/botAPI");
 
