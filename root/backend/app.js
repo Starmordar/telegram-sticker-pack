@@ -2,12 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const routes = require("./routes/router");
-const { port, bot_token, chat_id } = require("./config/config");
-const botUrl = "https://api.telegram.org/bot";
-
-const siteUrl = `http://167.71.13.201:${port}/`;
-
+const { port, bot_token } = require("./config/config");
 const { fetchUpdates } = require("./routes/botAPI");
+
+const botUrl = "https://api.telegram.org/bot";
+const siteUrl = `http://167.71.13.201:${port}/`;
 
 const botUpdateOffset = 0,
   limitsOfUpdates = 100,

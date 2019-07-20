@@ -1,8 +1,6 @@
 const crypto = require('crypto');
 
-
-
-function checkAuthentification(bot_token, userData) {
+function isValidAuthentification(bot_token, userData) {
     if (Object.keys(userData).length === 0 && userData.constructor === Object) {
         return false;
     }
@@ -17,14 +15,14 @@ function checkAuthentification(bot_token, userData) {
 
     let dataCheckingString = dataCheckingArray.sort().join('\n');
 
-    const checkHash = crypto.createHmac('sha256', secretKey).
-        update(dataCheckingString)
+    const checkHash = crypto
+        .createHmac('sha256', secretKey)
+        .update(dataCheckingString)
         .digest('hex');
-    console.log(checkHash === userData.hash);
+    
     return checkHash === userData.hash;
 }
 
-
 module.exports = {
-    checkAuthentification: checkAuthentification
+    isValidAuthentification: isValidAuthentification
 }

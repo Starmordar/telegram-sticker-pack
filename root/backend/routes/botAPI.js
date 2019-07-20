@@ -50,7 +50,7 @@ function fetchUpdates(offset, limit, timeout, botUrl, bot_token, siteUrl) {
       if (!(updates === undefined || updates.length == 0)) {
         offset = updates[updates.length - 1].update_id + 1;
       }
-      
+
       fetchUpdates(offset, limit, timeout, botUrl, bot_token, siteUrl)
     });
 }
