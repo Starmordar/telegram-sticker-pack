@@ -35,7 +35,7 @@ function fetchUpdates(offset, limit, timeout, botUrl, bot_token, siteUrl) {
     })
     .then(function (response) {
       let updates = response.data.result;
-      
+
       if (updates === undefined || updates.length == 0) {
         return [];
       }
@@ -47,18 +47,18 @@ function fetchUpdates(offset, limit, timeout, botUrl, bot_token, siteUrl) {
       console.log(error);
     })
     .then(function (updates) {
-      if (updates === undefined || updates.length == 0) {
-        return [];
+      if (!(updates === undefined || updates.length == 0)) {
+        offset = updates[updates.length - 1].update_id + 1;
       }
-
-      offset = updates[updates.length - 1].update_id + 1;
+      
       fetchUpdates(offset, limit, timeout, botUrl, bot_token, siteUrl)
     });
 }
 
 function handleUpdate(update, botUrl, bot_token, siteUrl) {
+  const chatID = update.message.chat.id;
   if (update.message.text === '/start') {
-    createSeamlessLogin(update.message.chat.id, botUrl, bot_token, siteUrl)
+    createSeamlessLogin(chatID, botUrl, bot_token, siteUrl)
   }
 }
 
