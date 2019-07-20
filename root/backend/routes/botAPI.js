@@ -18,14 +18,50 @@ function createSeamlessLogin(chat_id, botUrl, bot_token, siteUrl) {
         ]
       }
     })
-    .then(function(response) {
+    .then(function (response) {
       // console.log(response);
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log(error);
     });
 }
 
+function fetchUpdates(offset, limit, timeout, botUrl, bot_token, siteUrl) {
+  axios
+    .post(`${botUrl}${bot_token}/getUpdates`, {
+      offset: offset,
+      limit: limit,
+      timeout: timeout,
+    })
+    .then(function (response) {
+      let updates = response.data.result;
+      
+      if (updates === undefined || updates.length == 0) {
+        return [];
+      }
+
+      updates.map((update) => handleUpdate(update, botUrl, bot_token, siteUrl))
+      return updates
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+    .then(function (updates) {
+      if (updates === undefined || updates.length == 0) {
+        return [];
+      }
+
+      offset = updates[updates.length - 1].update_id + 1;
+      fetchUpdates(offset, limit, timeout, botUrl, bot_token, siteUrl)
+    });
+}
+
+function handleUpdate(update, botUrl, bot_token, siteUrl) {
+  if (update.message.text === '/start') {
+    createSeamlessLogin(update.message.chat.id, botUrl, bot_token, siteUrl)
+  }
+}
+
 module.exports = {
-  createSeamlessLogin: createSeamlessLogin
+  fetchUpdates: fetchUpdates
 };

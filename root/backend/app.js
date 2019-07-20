@@ -7,15 +7,19 @@ const botUrl = "https://api.telegram.org/bot";
 
 const siteUrl = `http://167.71.13.201:${port}/`;
 
-const { createSeamlessLogin } = require("./routes/botAPI");
+const { fetchUpdates } = require("./routes/botAPI");
+
+const botUpdateOffset = 0,
+  limitsOfUpdates = 100,
+  timeoutLongPolling = 30;
 
 let app = express();
 
 app.use("/", routes);
 app.use(bodyParser.json());
 
-createSeamlessLogin(chat_id, botUrl, bot_token, siteUrl);
+fetchUpdates(botUpdateOffset, limitsOfUpdates, timeoutLongPolling, botUrl, bot_token, siteUrl);
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log(`App listening on port ${port}`);
 });
