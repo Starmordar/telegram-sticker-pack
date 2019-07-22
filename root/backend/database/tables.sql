@@ -15,3 +15,12 @@ create table "StickerPack"(
             references "User" (user_id)
         on delete cascade on update cascade
 );
+
+create table "UserSession" (
+    sid varchar not null ,
+    sess json not null,
+    expire timestamp not null
+);
+
+ALTER TABLE "UserSession" ADD CONSTRAINT "session_pkey"
+PRIMARY KEY (sid) NOT DEFERRABLE INITIALLY IMMEDIATE;
