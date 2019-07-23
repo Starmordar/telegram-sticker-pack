@@ -26,6 +26,19 @@ function createSeamlessLogin(chat_id, botUrl, bot_token, siteUrl) {
     });
 }
 
+function sendInfoMessage(chat_id, botUrl, bot_token) {
+  axios.post(`${botUrl}${bot_token}/sendMessage`, {
+    chat_id: chat_id,
+    text: "Write /start to start with application"
+  })
+    .then(function (response) {
+      // console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
 function fetchUpdates(offset, limit, timeout, botUrl, bot_token, siteUrl) {
   axios
     .post(`${botUrl}${bot_token}/getUpdates`, {
@@ -59,6 +72,8 @@ function handleUpdate(update, botUrl, bot_token, siteUrl) {
   const chatID = update.message.chat.id;
   if (update.message.text === '/start') {
     createSeamlessLogin(chatID, botUrl, bot_token, siteUrl)
+  } else {
+    sendInfoMessage(chatID, botUrl, bot_token);
   }
 }
 
