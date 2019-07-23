@@ -23,6 +23,15 @@ function isValidAuthentification(bot_token, userData) {
     return checkHash === userData.hash;
 }
 
+const sessionChecker = (req, res, next) => {
+    if (req.session.user && req.cookies['connect.sid']) {
+        res.redirect('/profile');
+    } else {
+        next();
+    }
+};
+
 module.exports = {
-    isValidAuthentification: isValidAuthentification
+    isValidAuthentification: isValidAuthentification,
+    sessionChecker: sessionChecker
 }

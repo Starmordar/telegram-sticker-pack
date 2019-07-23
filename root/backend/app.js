@@ -34,6 +34,13 @@ app.use(session({
   cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } //30 days
 }));
 
+app.use((req, res, next) => {
+  if (req.cookies['connect.sid'] && !req.session.user) {
+    res.clearCookie('connect.sid');
+  }
+  next();
+});
+
 app.use("/", routes);
 
 fetchUpdates(botUpdateOffset, limitsOfUpdates, timeoutLongPolling, botUrl, bot_token, siteUrl);
