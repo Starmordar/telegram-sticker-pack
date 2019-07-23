@@ -46,10 +46,19 @@ router.get('/profile', function (req, res) {
 
 router.get('/logout', function (req, res) {
   if (req.session.user && req.cookies['connect.sid']) {
-    res.clearCookie(['connect.sid']);
-    res.redirect('/');
+    const deleteUser = `delete from "UserSession"
+                    where sess::json#>>'{user}' = '${req.session.user}';`
+    
+    query(deleteUser)
+      .then(() => {
+        res.clearCookie(['connect.sid']);
+        res.redirect('/');
+      })
+      .catch((err) => console.error(err));
+
   } else {
     console.log('change');
+    res.redirect('/');
   }
 });
 
