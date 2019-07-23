@@ -6,7 +6,7 @@ const { bot_token } = require("../config/config");
 const { isValidAuthentification, sessionChecker } = require('../authentification/auth');
 const { query } = require('../database/requests');
 
-router.get("/", sessionChecker, function (req, res) {
+router.get("/", sessionChecker, function (req, res, next) {
   const userData = req.query;
 
   if (isValidAuthentification(bot_token, userData) === true) {
@@ -24,13 +24,13 @@ router.get("/", sessionChecker, function (req, res) {
               req.session.user = userData.id;
               res.redirect('/profile');
             })
-            .catch(err => console.log(err));
+            .catch(err => next(err));
         } else {
           req.session.user = userData.id;
           res.redirect('/profile');
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => next(err));
   } else {
     res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
   }
@@ -44,7 +44,7 @@ router.get('/profile', function (req, res) {
   }
 });
 
-router.get('/logout', function (req, res) {
+router.get('/logout', function (req, res, next) {
   if (req.session.user && req.cookies['connect.sid']) {
     const deleteUser = `delete from "UserSession"
                     where sess::json#>>'{user}' = '${req.session.user}';`
@@ -54,10 +54,9 @@ router.get('/logout', function (req, res) {
         res.clearCookie(['connect.sid']);
         res.redirect('/');
       })
-      .catch((err) => console.error(err));
+      .catch((err) => next(err));
 
   } else {
-    console.log('change');
     res.redirect('/');
   }
 });

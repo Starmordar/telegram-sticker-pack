@@ -43,6 +43,12 @@ app.use((req, res, next) => {
 
 app.use("/", routes);
 
+app.use(function (err, req, res, next) {
+  console.error(err.message);
+  if (!err.statusCode) err.statusCode = 500;
+  res.status(err.statusCode).send(err.message);
+});
+
 fetchUpdates(botUpdateOffset, limitsOfUpdates, timeoutLongPolling, botUrl, bot_token, siteUrl);
 
 app.listen(port, function () {
