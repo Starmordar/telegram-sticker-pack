@@ -1,23 +1,21 @@
 const crypto = require('crypto');
 
-function getUnixTime() {
+const { isEmptyObject } = require('../helper/functions');
+
+function getUnixCurrentTimeStamp() {
     return Math.floor(new Date() / 1000);
 }
 
-function isValidDate(userData) {
-    if (getUnixTime() - userData.auth_date > 86400) { //1 day
-        return false;
+function isOutdatedData(userData) {
+    const oneDayInSeconds = 86400;
+
+    if (getUnixCurrentTimeStamp() - userData.auth_date > oneDayInSeconds) {
+        return true;
     }
-    return true;
+    return false;
 }
 
-function isValidAuthentification(bot_token, userData) {
-    if (Object.keys(userData).length === 0 && userData.constructor === Object) {
-        return false;
-    }
-    if(isValidDate(userData) === false){
-        return false;
-    }
+function getAuthentificationHash(bot_token, userData) {
     const secretKey = crypto.createHash('sha256').update(bot_token).digest();
 
     let dataCheckingArray = [];
@@ -34,18 +32,17 @@ function isValidAuthentification(bot_token, userData) {
         .update(dataCheckingString)
         .digest('hex');
 
-    return checkHash === userData.hash;
+    return checkHash;
 }
 
-const sessionChecker = (req, res, next) => {
-    if (req.session.user && req.cookies['connect.sid']) {
-        res.redirect('/profile');
-    } else {
-        next();
-    }
-};
+function checkTelegramAuthorization(bot_token, userData) {
+    if (isEmptyObject(userData)) return "Empty query";
+    if (isOutdatedData(userData)) return "Data is outdated";
 
-module.exports = {
-    isValidAuthentification: isValidAuthentification,
-    sessionChecker: sessionChecker
+    const checkHash = getAuthentificationHash(bot_token, userData);
+    if (checkHash !== userData.hash) return "Data is NOT from Telegram"
+
+    return "Correct data"
 }
+
+module.exports = checkTelegramAuthorization
