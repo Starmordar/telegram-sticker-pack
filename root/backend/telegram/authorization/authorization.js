@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-const { isEmptyObject } = require('../helper/functions');
+const { isEmptyObject } = require('../../helper/functions');
 
 function getUnixCurrentTimeStamp() {
     return Math.floor(new Date() / 1000);

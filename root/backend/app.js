@@ -6,7 +6,7 @@ const pgSession = require('connect-pg-simple')(session);
 
 const routes = require("./routes/router");
 const { port, bot_token, secret } = require("./config/config");
-const { fetchUpdates } = require("./routes/botAPI");
+const { fetchUpdates } = require("./telegram/bots/loginBot");
 const { pool } = require("./database/requests");
 
 const botUrl = "https://api.telegram.org/bot";

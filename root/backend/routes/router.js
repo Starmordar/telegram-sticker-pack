@@ -3,17 +3,10 @@ const router = express.Router();
 const path = require("path");
 
 const { bot_token } = require("../config/config");
-const checkTelegramAuthorization  = require('../authentification/auth');
+const checkTelegramAuthorization = require('../telegram/authorization/authorization');
 const { query } = require('../database/requests');
-
-function sessionChecker(req, res, next) {
-  if (req.session.user && req.cookies['connect.sid']) {
-    console.log(1123);
-    res.redirect('/profile');
-  } else {
-    next();
-  }
-};
+const { sessionChecker } = require('./functions/middleware');
+const { isEmptyArray } = require('../helper/functions');
 
 router.get("/", sessionChecker, function (req, res, next) {
   const userData = req.query;
@@ -26,12 +19,15 @@ router.get("/", sessionChecker, function (req, res, next) {
     case "Data is outdated":
       res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
       break;
+    case "Data is NOT from Telegram":
+      res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
+      break;
     case "Correct data":
       const checkUser = `select * from "User" where user_id = ${userData.id}`;
 
       query(checkUser)
-        .then((data) => {
-          if (data === undefined || data.length == 0) {
+        .then((user) => {
+          if (isEmptyArray(user)) {
             const addNewUser =
               `insert into "User"(user_id, first_name, last_name, username, photo_uri)
               values (${userData.id}, '${userData.first_name}', '${userData.last_name}', '${userData.username}', '${userData.photo_url}')`;
@@ -48,9 +44,6 @@ router.get("/", sessionChecker, function (req, res, next) {
           }
         })
         .catch(err => next(err));
-      break;
-    case "Data is NOT from Telegram":
-      res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
       break;
     default:
       break;
