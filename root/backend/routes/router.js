@@ -2,16 +2,16 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 
-const { bot_token } = require("../config/config");
+const { login_bot_token } = require("../config/config");
 const checkTelegramAuthorization = require('../telegram/authorization/authorization');
-const { query } = require('../database/requests');
+const { query } = require('../database/queries');
 const { sessionChecker } = require('./functions/middleware');
 const { isEmptyArray } = require('../helper/functions');
 
 router.get("/", sessionChecker, function (req, res, next) {
   const userData = req.query;
 
-  const authorizationState = checkTelegramAuthorization(bot_token, userData);
+  const authorizationState = checkTelegramAuthorization(login_bot_token, userData);
   switch (authorizationState) {
     case "Empty query":
       res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));

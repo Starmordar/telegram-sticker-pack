@@ -8,7 +8,7 @@ const pool = new Pool({
   database: database,
   password: password,
   port: db_port
-});
+}); 
 
 pool.on('error', (err, client) => {
   console.error('Unexpected error on idle client', err)

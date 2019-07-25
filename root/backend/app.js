@@ -5,9 +5,9 @@ const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 
 const routes = require("./routes/router");
-const { port, bot_token, secret } = require("./config/config");
+const { port, login_bot_token, secret } = require("./config/config");
 const { fetchUpdates } = require("./telegram/bots/loginBot");
-const { pool } = require("./database/requests");
+const { pool } = require("./database/queries");
 
 const botUrl = "https://api.telegram.org/bot";
 const siteUrl = `http://167.71.13.201:${port}/`;
@@ -49,7 +49,7 @@ app.use(function (err, req, res, next) {
   res.status(err.statusCode).send(err.message);
 });
 
-fetchUpdates(botUpdateOffset, limitsOfUpdates, timeoutLongPolling, botUrl, bot_token, siteUrl);
+fetchUpdates(botUpdateOffset, limitsOfUpdates, timeoutLongPolling, botUrl, login_bot_token, siteUrl);
 
 app.listen(port, function () {
   console.log(`App listening on port ${port}`);

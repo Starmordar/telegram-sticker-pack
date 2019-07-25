@@ -3,7 +3,7 @@ dotenv.config();
 
 module.exports = {
   port: process.env.PORT,
-  bot_token: process.env.TELEGRAM_BOT_TOKEN,
+  login_bot_token: process.env.TELEGRAM_LOGIN_BOT_TOKEN,
 
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
