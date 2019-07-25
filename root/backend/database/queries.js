@@ -8,7 +8,7 @@ const pool = new Pool({
   database: database,
   password: password,
   port: db_port
-}); 
+});
 
 pool.on('error', (err, client) => {
   console.error('Unexpected error on idle client', err)
@@ -16,19 +16,22 @@ pool.on('error', (err, client) => {
 });
 
 function query(...args) {
-  return new Promise((resolve, reject) => {
-    pool.connect((err, client, done) => {
-      if (err) throw err;
-      client.query(args[0], (err, res) => {
-        done();
+  const queryStr = args[0],
+    values = args[1];
 
-        if (err) {
-          reject(err);
-        } else {
-          resolve(res.rows);
-        }
+  return new Promise((resolve, reject) => {
+    pool.connect()
+      .then(client => {
+        return client.query(queryStr, values)
+          .then(res => {
+            client.release()
+            resolve(res.rows)
+          })
+          .catch(err => {
+            client.release()
+            reject(err)
+          })
       })
-    })
   })
 }
 

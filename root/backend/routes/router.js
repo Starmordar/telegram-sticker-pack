@@ -7,6 +7,7 @@ const checkTelegramAuthorization = require('../telegram/authorization/authorizat
 const { query } = require('../database/queries');
 const { sessionChecker } = require('./functions/middleware');
 const { isEmptyArray } = require('../helper/functions');
+const { transformUserDataToArray } = require('./functions/func')
 
 router.get("/", sessionChecker, function (req, res, next) {
   const userData = req.query;
@@ -23,16 +24,19 @@ router.get("/", sessionChecker, function (req, res, next) {
       res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
       break;
     case "Correct data":
-      const checkUser = `select * from "User" where user_id = ${userData.id}`;
+      let queryStr = `select * from "User" where user_id = $1`,
+        values = [userData.id];
 
-      query(checkUser)
+      query(queryStr, values)
         .then((user) => {
           if (isEmptyArray(user)) {
-            const addNewUser =
-              `insert into "User"(user_id, first_name, last_name, username, photo_uri)
-              values (${userData.id}, '${userData.first_name}', '${userData.last_name}', '${userData.username}', '${userData.photo_url}')`;
 
-            query(addNewUser)
+            queryStr =
+              `insert into "User"(user_id, first_name, last_name, username, photo_uri)
+              values ($1, $2, $3, $4, $5)`;
+            values = transformUserDataToArray(userData);
+
+            query(queryStr, values)
               .then(() => {
                 req.session.user = userData.id;
                 res.redirect('/profile');
@@ -60,10 +64,12 @@ router.get('/profile', function (req, res) {
 
 router.get('/logout', function (req, res, next) {
   if (req.session.user && req.cookies['connect.sid']) {
-    const deleteUser = `delete from "UserSession"
-                    where sess::json#>>'{user}' = '${req.session.user}';`
 
-    query(deleteUser)
+    let queryStr = `delete from "UserSession"
+    where sess::json#>>'{user}' = $1;`,
+      values = [req.session.user];
+
+    query(queryStr, values)
       .then(() => {
         res.clearCookie(['connect.sid']);
         res.redirect('/');
