@@ -9,19 +9,24 @@ const { sessionChecker } = require('./functions/middleware');
 const { isEmptyArray } = require('../helper/functions');
 const { transformUserDataToArray } = require('./functions/func')
 
-router.get("/", sessionChecker, function (req, res, next) {
-  const userData = req.query;
+let global;
 
+router.get("/auth", sessionChecker, function (req, res, next) {
+  const userData = req.query;
   const authorizationState = checkTelegramAuthorization(login_bot_token, userData);
+  // res.send(authorizationState);
   switch (authorizationState) {
     case "Empty query":
-      res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
+      res.send("Empty query");
+      // res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
       break;
     case "Data is outdated":
-      res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
+      res.send("Data is outdated");
+      // res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
       break;
     case "Data is NOT from Telegram":
-      res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
+      res.send("Data is NOT from Telegram");
+      // res.sendFile(path.resolve(__dirname + "/../../frontend/src/index.html"));
       break;
     case "Correct data":
       let queryStr = `select * from "User" where user_id = $1`,
@@ -39,12 +44,14 @@ router.get("/", sessionChecker, function (req, res, next) {
             query(queryStr, values)
               .then(() => {
                 req.session.user = userData.id;
-                res.redirect('/profile');
+                res.send('redirect');
+                // res.redirect('/profile');
               })
               .catch(err => next(err));
           } else {
             req.session.user = userData.id;
-            res.redirect('/profile');
+            res.send('redirect');
+            // res.redirect('/profile');
           }
         })
         .catch(err => next(err));
@@ -80,10 +87,5 @@ router.get('/logout', function (req, res, next) {
     res.redirect('/');
   }
 });
-
-
-router.get('/some', function (req, res, next) {
-  res.send("Slim Shady");
-})
 
 module.exports = router;
