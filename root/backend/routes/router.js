@@ -81,4 +81,9 @@ router.get('/logout', function (req, res, next) {
   }
 });
 
+
+router.get('/some', function (req, res, next) {
+  res.send("Slim Shady");
+})
+
 module.exports = router;

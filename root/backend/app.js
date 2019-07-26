@@ -10,7 +10,7 @@ const { fetchUpdates } = require("./telegram/bots/loginBot");
 const { pool } = require("./database/queries");
 
 const botUrl = "https://api.telegram.org/bot";
-const siteUrl = `http://167.71.13.201:${port}/`;
+const siteUrl = `http://167.71.13.201:3000/`;
 
 const botUpdateOffset = 0,
   limitsOfUpdates = 100,
