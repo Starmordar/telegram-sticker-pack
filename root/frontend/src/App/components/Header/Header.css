@@ -1,0 +1,17 @@
+.info {
+    font-family: 'Roboto Slab', serif;
+}
+
+.info__heading {
+    font-size: 18px;
+    color: #4eb7fe;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+}
+
+.info__subheader {
+    font-size: 24px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    line-height: 1.2
+}

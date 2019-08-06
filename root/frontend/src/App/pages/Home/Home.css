@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.landing {
+    position: relative;
+    background-image: linear-gradient(to right bottom, #1a2a87, #293a9c, #364bb1, #435dc7, #4f6fdd, #3188ed, #079ef8, #00b4ff, #00ccf2, #55dfdc, #9cecc9, #d7f7c5);
+    height: 100vh;
+    min-height: 100vh;
+    z-index: 3;
+}
+
+.container {
+    height: 100%;
+}
+
+.row {
+    height: 100%;
+}
+
+.brief-info {
+    width: 55%;
+}
+
+.octopus {
+    width: 50%;
+    height: 45%;
+    min-height: 400px;
+    min-width: 400px;
+    object-fit: contain;
+}
+
+.form {
+    padding: 20px;
+    width: 40%;
+    background: white;
+    border-radius: 5px;
+}
+
+.card{
+    font-family: 'Blinker', sans-serif;
+}
