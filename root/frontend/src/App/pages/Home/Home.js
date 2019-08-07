@@ -10,9 +10,6 @@ import HorizaontalCard from "../../components/HorizontalCard/HorizontalCard";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      msg: "defaut message"
-    }
   }
 
   componentDidMount() {
@@ -28,7 +25,6 @@ class Home extends React.Component {
       }
     };
     auth();
-
   }
 
   render() {
