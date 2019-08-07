@@ -1,14 +1,18 @@
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
 }
 
 .landing {
     position: relative;
-    background-image: linear-gradient(to right bottom, #1a2a87, #293a9c, #364bb1, #435dc7, #4f6fdd, #3188ed, #079ef8, #00b4ff, #00ccf2, #55dfdc, #9cecc9, #d7f7c5);
+    background: #1a2a87;
+    background: linear-gradient(to right bottom, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
+    background: -moz-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
+    background: -webkit-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2a87', endColorstr='#d7f7c5', GradientType=1);
+    min-height: 75vh !important;
     height: 100vh;
-    min-height: 100vh;
-    z-index: 3;
 }
 
 .container {
@@ -32,12 +36,12 @@ body {
 }
 
 .form {
-    padding: 20px;
-    width: 40%;
-    background: white;
-    border-radius: 5px;
-}
-
-.card{
     font-family: 'Blinker', sans-serif;
+    padding: 20px 20px 5px 20px;
+    width: 40%;
+    background: #ffffff;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 5px 26px -11px rgba(23, 23, 23, 1);
+    -moz-box-shadow: 3px 5px 26px -11px rgba(23, 23, 23, 1);
+    box-shadow: 3px 5px 26px -7px rgba(23, 23, 23, 1);
 }

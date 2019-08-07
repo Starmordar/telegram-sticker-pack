@@ -4,20 +4,23 @@ import './HorizontalCard.css'
 class HorizontalCard extends React.Component {
     constructor(props) {
         super(props);
-    }
 
-    render() {
-        const iconStyle = {
+        this.iconStyle = {
+            position: 'absolute',
+            right: '20px',
+            top: '20px',
             fontSize: '40px',
             color: '#f07869'
         }
+    }
 
+    render() {
         return (
             <div className='card border-right-0 border-left-0 border-top-0'>
                 <div className='row no-gutters'>
 
                     <div className="icon col-md-3">
-                        <i className={this.props.icon} aria-hidden="true" style={iconStyle}></i>
+                        <i className={this.props.icon} aria-hidden="true" style={this.iconStyle}></i>
                     </div>
 
                     <div className="text-content col-md-9">
@@ -29,7 +32,6 @@ class HorizontalCard extends React.Component {
 
                 </div>
             </div>
-
         )
     }
 }

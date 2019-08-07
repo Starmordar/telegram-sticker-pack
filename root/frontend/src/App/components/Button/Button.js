@@ -6,11 +6,14 @@ class Button extends React.Component {
         super(props);
     }
 
+    handleClick = (event) => {
+        // event.preventDefault()
+    }
+
     render() {
         return (
-            <a href={this.props.href}
-                className='btn'
-                style={this.props.style}>{this.props.textContent}</a>
+            <a href={this.props.href} className='btn'
+                style={this.props.style} onClick={this.handleClick}>{this.props.textContent}</a>
         )
     }
 }

@@ -6,21 +6,22 @@ import Button from '../Button/Button'
 class LoginButton extends React.Component {
     constructor(props) {
         super(props);
-    }
 
-    render() {
-        const btnContent = 'Login with Telegram';
-
-        const btnStyle = {
+        this.btnContent = 'Login with Telegram';
+        this.btnStyle = {
             backgroundColor: '#dc3545',
             color: '#ffffff',
             padding: '13px 40px',
             fontSize: '20px'
         }
-        const href = 'javascript:void(0)'
+        this.href = 'tg://resolve?domain=testSamples_bot'
+    }
 
+
+
+    render() {
         return (
-            <Button href={href} textContent={btnContent} style={btnStyle} />
+            <Button href={this.href} textContent={this.btnContent} style={this.btnStyle} />
         )
     }
 }
