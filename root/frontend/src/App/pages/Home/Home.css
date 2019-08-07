@@ -15,11 +15,11 @@ body {
     height: 100vh;
 }
 
-.container {
+.landing .container {
     height: 100%;
 }
 
-.row {
+.landing .row {
     height: 100%;
 }
 
@@ -35,7 +35,7 @@ body {
     object-fit: contain;
 }
 
-.form {
+.landing .form {
     font-family: 'Blinker', sans-serif;
     padding: 20px 20px 5px 20px;
     width: 40%;

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+
 import Home from './pages/Home/Home';
-import Profile from './pages/Profile';
+import WrongData from './pages/WrongData/WrongData';
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/profile' component={Profile}/>
+          <Route path='/wrongdata' component={WrongData}/>
         </Switch>
       </div>
     )
