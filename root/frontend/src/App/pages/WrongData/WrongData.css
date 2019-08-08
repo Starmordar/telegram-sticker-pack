@@ -1,4 +1,5 @@
 .someth-wrong {
+    font-family: 'Blinker', sans-serif;
     position: relative;
     background: #1a2a87;
     background: linear-gradient(to right bottom, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
@@ -9,48 +10,55 @@
     height: 100vh;
 }
 
-.gradient {
-    position: relative;
-    /* background: linear-gradient(to right bottom, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%); */
-    height: 100%;
-    width: 100%;
-    border-radius: 25px;
-    /* box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75); */
-}
-
 .svg-container {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     height: 95%;
     width: 95%;
-    transform: translate(-50%, -50%);
 }
 
-.test {
+.svg-shadow {
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 74%;
-    width: 95%;
     transform: translate(-50%, -50%);
+    height: 0px;
+    width: 0px;
     box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
     border-radius: 55px;
 }
 
-
 .header {
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
-    width: 80%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
 }
 
-.header h2 {
+.header .heading {
     font-family: 'Roboto Slab', serif;
-    font-size: 40px;
+    font-size: 75px;
     font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header .subheader {
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.loginbot-link {
+    text-decoration: none;
+    color: black;
+}
+
+.loginbot-link:hover {
+    text-decoration: underline;
+    color: black;
 }
