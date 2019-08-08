@@ -1,8 +1,8 @@
 import React from 'react';
 import './WrongData.css'
 
-import LoginButton from "../../components/LoginButton/LoginButton";
 import SVGLaptop from "../../components/SVGLaptop/SVGLaptop";
+import GlitchHeader from "../../components/GlitchHeader/GlitchHeader";
 
 class WrongData extends React.Component {
     constructor(props) {
@@ -24,7 +24,6 @@ class WrongData extends React.Component {
     }
 
     render() {
-        const SVG_BORDER_SIZE = 42;
         return (
             <section className="someth-wrong">
                 <div className="container h-100">
@@ -39,15 +38,7 @@ class WrongData extends React.Component {
                         <div className='svg-container'>
                             <SVGLaptop updateSize={this.updateSize} />
 
-                            <header className='header' style={{ width: this.state.width - SVG_BORDER_SIZE }}>
-                                <h2 className="heading font-weight-bold">WRONG DATA</h2>
-                                <p className="subheader">You trying to log-in with invalid or outdated data.
-                                 Make sure that you are using 
-                                 <a className='loginbot-link' href='tg://resolve?domain=testSamples_bot'> @login_bot </a> 
-                                  for sign-in and try again</p>
-                                <LoginButton />
-                            </header>
-
+                            <GlitchHeader width={this.state.width} />
                         </div>
 
                     </div>
