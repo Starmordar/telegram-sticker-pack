@@ -4,16 +4,26 @@ import './SVGLaptop.css'
 class SVGLaptop extends React.Component {
     constructor(props) {
         super(props);
+
+        this.onResize = this.onResize.bind(this);
     }
 
-
-    componentDidMount(){
-        const height = this.divElement.getBoundingClientRect().height,
-         width = this.divElement.getBoundingClientRect().width;
-         
-        this.props.getSize(height,width);
+    onResize () {
+        let height = this.divElement.getBoundingClientRect().height,
+        width = this.divElement.getBoundingClientRect().width;
+        
+       this.props.updateSize(height, width);
     }
 
+    componentDidMount() {
+        this.onResize();
+
+        window.addEventListener("resize", this.onResize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.onResize)
+    }
 
     render() {
         return (

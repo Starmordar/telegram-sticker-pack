@@ -12,17 +12,18 @@ class WrongData extends React.Component {
             height: 0,
             width: 0
         }
+
+        this.updateSize = this.updateSize.bind(this);
     }
 
-    getSize = (height, width) => {
+    updateSize(height, width) {
         this.setState({
             height: height,
             width: width
-        })
+        });
     }
 
     render() {
-
         return (
             <section className="someth-wrong">
                 <div className="container h-100">
@@ -35,7 +36,7 @@ class WrongData extends React.Component {
                                 }}></div>
                             <div className='svg-container'>
 
-                                <SVGLaptop getSize={this.getSize} />
+                                <SVGLaptop updateSize={this.updateSize} />
 
                                 <header className='header'>
                                     <h2>Somethin' went wrong</h2>
