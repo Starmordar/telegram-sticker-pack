@@ -6,13 +6,11 @@ import LoginButton from '../LoginButton/LoginButton';
 class GlitchHeader extends React.Component {
     constructor(props) {
         super(props);
-
-        this.SVG_BORDER_SIZE = 50;
     }
 
     render() {
         return (
-            <header className='glitch-header' style={{ width: this.props.width - this.SVG_BORDER_SIZE }}>
+            <header className='glitch-header' style={{ width: this.props.width - (this.props.width / 12) }}>
                 <h2 className='glitch-header__heading font-weight-bold'>WRONG DATA</h2>
                 <h2 className='glitch-header__heading glitch-header__heading-clone font-weight-bold'>WRONG DATA</h2>
                 <p className='glitch-header__subheader'>You trying to log-in with invalid or outdated data.

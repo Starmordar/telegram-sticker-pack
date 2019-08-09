@@ -2,6 +2,7 @@
     position: absolute;
     top: 52%;
     left: 50%;
+    font-size: 16px;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
@@ -9,7 +10,7 @@
 
 .glitch-header .glitch-header__heading {
     font-family: 'Roboto Slab', serif;
-    font-size: 75px;
+    font-size: 4.1em;
     font-weight: 700;
     letter-spacing: 1px;
     background-color: black;
@@ -20,7 +21,7 @@
     position: absolute;
     top: 1px;
     left: 45%;
-    height: 50px;
+    height: 0.6em;
     margin-left: -40%;
     width: 90%;
     overflow: hidden;
@@ -28,7 +29,7 @@
 }
 
 .glitch-header .glitch-header__subheader {
-    font-size: 22px;
+    font-size: 1.5em;
     font-weight: 400;
     margin-bottom: 25px;
     margin-top: 25px;
@@ -45,28 +46,185 @@
     color: black;
 }
 
+@media (min-width: 1600px) {
+    .glitch-header {
+        font-size: 24px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+}
+
+@media (min-width: 1600px) and (max-height: 1020px) {
+    .glitch-header {
+        font-size: 21px;
+    }
+}
+
+@media (min-width: 1600px) and (max-height: 920px) {
+    .glitch-header {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1600px) and (max-height: 790px) {
+    .glitch-header {
+        font-size: 15px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 25px;
+    }
+}
+
+@media (min-width: 1600px) and (max-height: 690px) {
+    .glitch-header {
+        font-size: 12px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+    .glitch-header {
+        font-size: 20px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 35px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) and (max-height: 850px) {
+    .glitch-header {
+        font-size: 17px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) and (max-height: 720px) {
+    .glitch-header {
+        font-size: 14px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) and (max-height: 700px) {
+    .glitch-header {
+        font-size: 14px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .glitch-header {
+        font-size: 16px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 1023px) and (max-height: 600px) {
+    .glitch-header {
+        font-size: 12px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 959px) and (max-height: 600px) {
+    .glitch-header {
+        font-size: 10px;
+    }
+    .glitch-header .glitch-header__subheader {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
 @keyframes glitch {
-    5% { transform: translateX(2px) rotate(3deg)}
-    6% { transform: translateX(0px) rotate(3deg)}
-    15% { transform: translateX(2px) rotate(3deg)}
-    16% { transform: translateX(0px) rotate(3deg)}
-    20% { transform: translateX(-1px) rotate(3deg)}
-    21% { transform: translateX(4px) rotate(3deg)}
-    23% { transform: translateX(-4px) rotate(3deg)}
-    25% { transform: translateX(0px) rotate(3deg)}
-    31% { transform: translateX(-4px) rotate(3deg)}
-    32% { transform: translateX(0px) rotate(3deg)}
-    40% { transform: translateX(2px) rotate(3deg)}
-    41% { transform: translateX(3px) rotate(3deg)}
-    42% { transform: translateX(-3px) rotate(3deg)}
-    43% { transform: translateX(-2px) rotate(3deg)}
-    45% { transform: translateX(0px) rotate(3deg)}
-    50% { transform: translateX(4px) rotate(3deg)}
-    51% { transform: translateX(0px) rotate(3deg)}
-    60% { transform: translateX(2px) rotate(3deg)}
-    61% { transform: translateX(0px) rotate(3deg)}
-    79% { transform: translateX(-3px) rotate(3deg)}
-    80% { transform: translateX(0px) rotate(3deg)}
-    98% { transform: translateX(-2px) rotate(3deg)}
-    99% { transform: translateX(0px) rotate(3deg)}
+    5% {
+        transform: translateX(2px) rotate(3deg)
+    }
+    6% {
+        transform: translateX(0px) rotate(3deg)
+    }
+    15% {
+        transform: translateX(2px) rotate(3deg)
+    }
+    16% {
+        transform: translateX(0px) rotate(3deg)
+    }
+    20% {
+        transform: translateX(-1px) rotate(3deg)
+    }
+    21% {
+        transform: translateX(4px) rotate(3deg)
+    }
+    23% {
+        transform: translateX(-4px) rotate(3deg)
+    }
+    25% {
+        transform: translateX(0px) rotate(3deg)
+    }
+    31% {
+        transform: translateX(-4px) rotate(3deg)
+    }
+    32% {
+        transform: translateX(0px) rotate(3deg)
+    }
+    40% {
+        transform: translateX(2px) rotate(3deg)
+    }
+    41% {
+        transform: translateX(3px) rotate(3deg)
+    }
+    42% {
+        transform: translateX(-3px) rotate(3deg)
+    }
+    43% {
+        transform: translateX(-2px) rotate(3deg)
+    }
+    45% {
+        transform: translateX(0px) rotate(3deg)
+    }
+    50% {
+        transform: translateX(4px) rotate(3deg)
+    }
+    51% {
+        transform: translateX(0px) rotate(3deg)
+    }
+    60% {
+        transform: translateX(2px) rotate(3deg)
+    }
+    61% {
+        transform: translateX(0px) rotate(3deg)
+    }
+    79% {
+        transform: translateX(-3px) rotate(3deg)
+    }
+    80% {
+        transform: translateX(0px) rotate(3deg)
+    }
+    98% {
+        transform: translateX(-2px) rotate(3deg)
+    }
+    99% {
+        transform: translateX(0px) rotate(3deg)
+    }
 }
