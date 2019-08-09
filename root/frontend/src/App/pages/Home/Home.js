@@ -4,7 +4,7 @@ import queryString from 'query-string';
 import './Home.css'
 
 import LoginButton from "../../components/LoginButton/LoginButton";
-import Header from "../../components/Header/Header";
+import LandingHeader from "../../components/LandingHeader/LandingHeader";
 import HorizaontalCard from "../../components/HorizontalCard/HorizontalCard";
 
 class Home extends React.Component {
@@ -28,10 +28,6 @@ class Home extends React.Component {
   }
 
   render() {
-    const briefInfoHeading = 'SERVICE TO CREATE STICKER PACKS',
-      briefInfoSubheader = 'REALIZE YOUR CRAZY IDEAS WITH TELEGRAM STICKERS',
-      btnContent = 'Login with Telegram';
-
     const cardContent = [{
       icon: 'fa fa-sitemap',
       title: 'Automate Creating Packs',
@@ -52,7 +48,7 @@ class Home extends React.Component {
           <div className='row justify-content-between align-items-center'>
 
             <div className="brief-info">
-              <Header heading={briefInfoHeading} subheader={briefInfoSubheader} />
+              <LandingHeader />
               <img className="octopus"
                 src={require('../../assets/images/octopus.png')}
                 alt=""></img>
@@ -73,7 +69,7 @@ class Home extends React.Component {
 
                 <div className='card text-center border-0'>
                   <div className="card-body">
-                    <LoginButton textContent={btnContent} />
+                    <LoginButton />
                   </div>
                 </div>
               </div>
