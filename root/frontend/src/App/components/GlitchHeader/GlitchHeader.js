@@ -8,9 +8,18 @@ class GlitchHeader extends React.Component {
         super(props);
     }
 
+    calculateFontSize = (height, width) => {
+        if (window.innerWidth < 480) return (height + width) / 50;
+        return (height + width) / 85;
+    }
+
     render() {
         return (
-            <header className='glitch-header' style={{ width: this.props.width - (this.props.width / 12) }}>
+            <header className='glitch-header'
+                style={{
+                    width: this.props.width - (this.props.width / 12),
+                    fontSize: this.calculateFontSize(this.props.height, this.props.width)
+                }}>
                 <h2 className='glitch-header__heading font-weight-bold'>WRONG DATA</h2>
                 <h2 className='glitch-header__heading glitch-header__heading-clone font-weight-bold'>WRONG DATA</h2>
                 <p className='glitch-header__subheader'>You trying to log-in with invalid or outdated data.

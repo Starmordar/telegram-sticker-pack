@@ -3,7 +3,7 @@
     width: 100%;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 479px), (max-height: 479px) {
     .svg-laptop {
         visibility: hidden;
     }

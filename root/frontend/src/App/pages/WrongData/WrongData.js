@@ -32,13 +32,14 @@ class WrongData extends React.Component {
                         <div className='svg-shadow'
                             style={{
                                 height: this.state.height,
-                                width: this.state.width
+                                width: this.state.width,
+                                borderRadius: (this.state.width + this.state.height) / 23
                             }}></div>
 
                         <div className='svg-container'>
                             <SVGLaptop updateSize={this.updateSize} />
 
-                            <GlitchHeader width={this.state.width} />
+                            <GlitchHeader width={this.state.width} height={this.state.height} />
                         </div>
 
                     </div>
