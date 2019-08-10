@@ -49,30 +49,28 @@ class Home extends React.Component {
         <div className="container h-100">
           <div className='row h-100 justify-content-center sm-justify-content-between align-items-center flex-wrap'>
 
-            <div className="brief-info">
+            <div className="landing__short-description">
               <LandingHeader />
-              <img className="octopus"
+              <img className="landing__short-description__main-hero"
                 src={require('../../assets/images/octopus.png')}
                 alt=""></img>
             </div>
 
-            <div className='form'>
-              <div className="landing__header">
+            <div className='landing__call-to-action'>
 
-                {
-                  cardContent.map((val, index) => {
-                    return <HorizaontalCard
-                      key={index}
-                      icon={val.icon}
-                      title={val.title}
-                      text={val.text} />
-                  })
-                }
+              {
+                cardContent.map((val, index) => {
+                  return <HorizaontalCard
+                    key={index}
+                    icon={val.icon}
+                    title={val.title}
+                    text={val.text} />
+                })
+              }
 
-                <div className='card text-center border-0'>
-                  <div className="card-body">
-                    <LoginButton font={btnFontSize} />
-                  </div>
+              <div className='card text-center border-0'>
+                <div className="card-body">
+                  <LoginButton font={btnFontSize} />
                 </div>
               </div>
             </div>

@@ -5,25 +5,27 @@ html {
 body {
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
-    font-size: 16px;
 }
 
 .landing {
     position: relative;
+    display: flex;
+    align-items: center;
     background: #1a2a87;
     background: linear-gradient(to right bottom, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
     background: -moz-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
     background: -webkit-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2a87', endColorstr='#d7f7c5', GradientType=1);
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
 }
 
-.brief-info {
+.landing .landing__short-description {
+    margin-top: 25px;
     width: 55%;
 }
 
-.octopus {
+.landing .landing__short-description__main-hero {
     width: 70%;
     height: 65%;
     min-height: 400px;
@@ -31,9 +33,11 @@ body {
     object-fit: contain;
 }
 
-.landing .form {
+.landing .landing__call-to-action {
     font-family: 'Blinker', sans-serif;
     padding: 20px 20px 5px 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     width: 40%;
     background: #ffffff;
     border-radius: 10px;
@@ -46,38 +50,36 @@ body {
     html {
         font-size: 14px;
     }
-}
-
-@media (max-width: 1000px) {
-    html {
-        font-size: 13px;
-    }
-    .landing .form {
-        width: 55%;
-    }
-    .brief-info {
-        width: 45%;
-    }
-    .octopus {
+    .landing .landing__short-description__main-hero {
         min-height: 300px;
         min-width: 300px;
     }
+    .landing .landing__short-description {
+        width: 45%;
+    }
+    .landing .landing__call-to-action {
+        width: 55%;
+    }
 }
 
-@media (max-width: 800px) {
-    .brief-info {
+@media (max-width: 768px) {
+    .landing .landing__short-description__main-hero {
         display: none;
     }
-    .landing .form {
+    .landing .landing__short-description {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    .landing .landing__call-to-action {
         width: 80%;
     }
 }
 
 @media (max-width: 600px) and (orientation: landscape) {
     html {
-        font-size: 10px;
+        font-size: 12px;
     }
-    .landing .form {
+    .landing .landing__call-to-action {
         width: 70%;
     }
 }
@@ -86,13 +88,13 @@ body {
     html {
         font-size: 11px;
     }
-    .brief-info {
-        display: none;
-    }
-    .landing .form {
-        width: 80%;
+    .landing .landing__call-to-action {
+        width: 90%;
         padding: 0;
         border-radius: 10px;
         overflow: hidden;
+    }
+    .landing .landing__short-description {
+        margin-bottom: 10px;
     }
 }
