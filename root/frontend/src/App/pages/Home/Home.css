@@ -1,3 +1,7 @@
+html {
+    font-size: 16px;
+}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -12,16 +16,7 @@ body {
     background: -moz-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
     background: -webkit-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2a87', endColorstr='#d7f7c5', GradientType=1);
-    min-height: 75vh !important;
     height: 100vh;
-}
-
-.landing .container {
-    height: 100%;
-}
-
-.landing .row {
-    height: 100%;
 }
 
 .brief-info {
@@ -29,8 +24,8 @@ body {
 }
 
 .octopus {
-    width: 50%;
-    height: 45%;
+    width: 70%;
+    height: 65%;
     min-height: 400px;
     min-width: 400px;
     object-fit: contain;
@@ -45,4 +40,59 @@ body {
     -webkit-box-shadow: 3px 5px 26px -11px rgba(23, 23, 23, 1);
     -moz-box-shadow: 3px 5px 26px -11px rgba(23, 23, 23, 1);
     box-shadow: 3px 5px 26px -7px rgba(23, 23, 23, 1);
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 13px;
+    }
+    .landing .form {
+        width: 55%;
+    }
+    .brief-info {
+        width: 45%;
+    }
+    .octopus {
+        min-height: 300px;
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 800px) {
+    .brief-info {
+        display: none;
+    }
+    .landing .form {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+    html {
+        font-size: 10px;
+    }
+    .landing .form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 479px), (max-height: 479px) {
+    html {
+        font-size: 11px;
+    }
+    .brief-info {
+        display: none;
+    }
+    .landing .form {
+        width: 80%;
+        padding: 0;
+        border-radius: 10px;
+        overflow: hidden;
+    }
 }

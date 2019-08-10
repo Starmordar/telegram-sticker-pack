@@ -35,17 +35,19 @@ class Home extends React.Component {
     }, {
       icon: 'fa fa-tools',
       title: 'Image Editing',
-      text: 'The service has a wide selection of tools for editing your images. You can crop, resize, cut out easily, and even add your own text'
+      text: 'The service has a wide selection of tools for editing your images. You can crop, resize and even add your own text'
     }, {
       icon: 'fa fa-business-time',
       title: 'A Powerful Time-saving',
       text: 'You no longer have to spend time changing the format or size of the picture, we will do all this for you'
-    }]
+    }];
+
+    const btnFontSize = '1.2rem';
 
     return (
       <section className="landing">
-        <div className="container">
-          <div className='row justify-content-between align-items-center'>
+        <div className="container h-100">
+          <div className='row h-100 justify-content-center sm-justify-content-between align-items-center flex-wrap'>
 
             <div className="brief-info">
               <LandingHeader />
@@ -69,7 +71,7 @@ class Home extends React.Component {
 
                 <div className='card text-center border-0'>
                   <div className="card-body">
-                    <LoginButton />
+                    <LoginButton font={btnFontSize} />
                   </div>
                 </div>
               </div>

@@ -14,6 +14,7 @@ class GlitchHeader extends React.Component {
     }
 
     render() {
+        const btnFontSize = '1.4em';
         return (
             <header className='glitch-header'
                 style={{
@@ -26,7 +27,7 @@ class GlitchHeader extends React.Component {
                  Make sure that you are using
                  <a className='loginbot-link' href='tg://resolve?domain=testSamples_bot'> @login_bot </a>
                     for sign-in and try again</p>
-                <LoginButton />
+                <LoginButton font={btnFontSize} />
             </header>
         )
     }
