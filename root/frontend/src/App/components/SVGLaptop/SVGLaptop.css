@@ -2,3 +2,9 @@
     height: 100%;
     width: 100%;
 }
+
+@media (max-width: 479px) {
+    .svg-laptop {
+        visibility: hidden;
+    }
+}
