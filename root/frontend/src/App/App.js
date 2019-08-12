@@ -4,6 +4,7 @@ import './App.css';
 
 import Home from './pages/Home/Home';
 import WrongData from './pages/WrongData/WrongData';
+import Main from './pages/Main/Main';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/wrongdata' component={WrongData}/>
+          <Route exact path="/user/:userId" component={Main} />
         </Switch>
       </div>
     )

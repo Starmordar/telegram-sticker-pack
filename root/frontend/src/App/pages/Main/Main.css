@@ -1,0 +1,43 @@
+.left-side-navbar {
+    font-family: 'Montserrat', sans-serif;
+    position: fixed !important;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.dark-blue {
+    background: rgb(6, 27, 77);
+}
+
+.left-side-navbar .navbar-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-flow: nowrap;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+    color: white;
+}
+
+.left-side-navbar .brand-wrapper {
+    margin-bottom: 10px;
+}
+
+.navbar-content .brand-name {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-left: 20px;
+    opacity: .73;
+    transition: opacity .4s linear;
+}
+
+.navbar-content .brand-name:hover {
+    text-decoration: none;
+    opacity: 1;
+}
