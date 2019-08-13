@@ -9,13 +9,13 @@
 
 .hidden-section {
     max-height: 0;
-    overflow: hidden;
+    overflow-y: hidden;
     opacity: 0;
 }
 
 .open-section {
     max-height: 500px;
-    overflow: auto;
+    overflow-y: auto;
     opacity: 1;
 }
 
@@ -76,4 +76,29 @@
 
 .expanded-element:last-child {
     border-bottom: none;
+}
+
+.arrow-box {
+    padding: 5px;
+    position: absolute;
+    background: black;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    display: none;
+}
+
+.arrow-box:after {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-right-color: #000000;
+    border-width: 5px;
+    margin-top: -5px;
 }

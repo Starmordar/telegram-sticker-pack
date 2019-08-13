@@ -1,6 +1,8 @@
 import React from 'react';
 import './NavSection.css'
 
+import StickerPackLink from '../StickerPackLink/StickerPackLink'
+
 class NavSection extends React.Component {
     constructor(props) {
         super(props);
@@ -44,7 +46,7 @@ class NavSection extends React.Component {
 
 
     render() {
-        const text = ['StickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad'];
+        const text = ['StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad'];
         return (
             <div className='expanded-element'>
                 <div onClick={this.expandedAreaHandler} className='expanded-element__expand-link-wrapper' data-num={this.props.num}>
@@ -69,8 +71,9 @@ class NavSection extends React.Component {
 const CreateNewPack = (props) => {
     return (
         <li className='expandable-elements__element'>
-            <a href='javascript:void(0)' className='expandable-elements__element__link d-flex align-items-center' style={{ color: 'rgb(15, 255, 179)' }}>
-                <i class="fas fa-plus-square" style={{
+            <a href='javascript:void(0)' className='expandable-elements__element__link d-flex align-items-center'
+                style={{ color: 'rgb(15, 255, 179)' }}>
+                <i className="fas fa-plus-square" style={{
                     marginRight: '15px',
                     padding: '7.5px 8.5px'
                 }}></i>
@@ -78,22 +81,6 @@ const CreateNewPack = (props) => {
         </li>
     )
 }
-
-const StickerPackLink = (props) => {
-    return (
-        <li className='expandable-elements__element'>
-            <a href='javascript:void(0)' className='expandable-elements__element__link d-flex align-items-center'>
-                <img src={require('../../assets/images/octopus.png')}
-                    alt="" width='30' height='30' style={{
-                        objectFit: 'contain',
-                        marginRight: '15px'
-                    }}></img>
-                <span>{props.text}</span></a>
-        </li>
-    )
-}
-
-
 
 const ExpandElement = (props) => {
     return (
