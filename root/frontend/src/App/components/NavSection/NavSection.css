@@ -99,6 +99,7 @@
     top: 0;
     left: 0;
     min-width: 110px;
+    white-space: nowrap;
     max-width: 500px;
     padding: 5px;
     font-size: 13px;
