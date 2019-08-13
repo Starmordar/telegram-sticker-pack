@@ -57,7 +57,7 @@ class NavSection extends React.Component {
                     {
                         text.map((val, index) => {
                             return (
-                                <StickerPackLink key={index} text={val} />
+                                <StickerPackLink key={index} packName={val} />
                             )
                         })
                     }
@@ -85,7 +85,7 @@ const CreateNewPack = (props) => {
 const ExpandElement = (props) => {
     return (
         <li className='custom-collapse__collapse-elements__element'>
-            <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link'>{props.text}</a>
+            <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link'>{props.packName}</a>
         </li>
     )
 }

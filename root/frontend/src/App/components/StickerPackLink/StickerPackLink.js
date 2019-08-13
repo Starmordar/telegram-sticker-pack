@@ -1,15 +1,17 @@
 import React from 'react';
 import './StickerPackLink.css'
 
-const HALF_HEIGHT_OF_LINK = 10
+const HALF_HEIGHT_OF_LINK = 10;
+const WIDTH_OF_LINK = 220;
+const MAX_LENGTH_OF_DISPLAYED_NAME = 13;
 
 class StickerPackLink extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            text: this.props.text,
-            moreInfo: false
+            shortPackName: this.props.packName,
+            showTooltip: false
         }
 
         this.mouseOverHandler = this.mouseOverHandler.bind(this);
@@ -18,42 +20,55 @@ class StickerPackLink extends React.Component {
 
 
     mouseOverHandler(e) {
-        const scrollTopLinks = e.currentTarget.parentNode.scrollTop;
-        const scrollTopNavbar = document.querySelector('.navbar-content').scrollTop
+        const eventTrigger = e.currentTarget;
 
-        const topPosition = e.currentTarget.offsetTop + HALF_HEIGHT_OF_LINK - scrollTopNavbar - scrollTopLinks;
+        if (eventTrigger.firstChild.classList.contains('custom-tooltip')) {
+            const tooltip = eventTrigger.firstChild;
 
-        e.currentTarget.firstChild.style.top = topPosition + 'px';
-        e.currentTarget.firstChild.style.left = '220px';
-        e.currentTarget.firstChild.style.display = 'block';
+            const scrollTopLinks = eventTrigger.parentNode.scrollTop,
+                scrollTopNavbar = document.querySelector('.navbar-content').scrollTop;
+
+            const topPosition = eventTrigger.offsetTop +
+                HALF_HEIGHT_OF_LINK - (scrollTopNavbar + scrollTopLinks);
+
+            tooltip.style.top = `${topPosition}px`;
+            tooltip.style.left = `${WIDTH_OF_LINK}px`;
+            tooltip.style.display = 'block';
+        }
     }
 
     mouseOutHandler(e) {
-        e.currentTarget.firstChild.style.display = 'none'
+        const tooltip = e.currentTarget.firstChild
+
+        if (tooltip.classList.contains('custom-tooltip')) {
+            tooltip.style.display = 'none';
+        }
     }
 
     componentDidMount() {
-        if (this.props.text.length > 13) {
+        if (this.props.packName.length > MAX_LENGTH_OF_DISPLAYED_NAME) {
             this.setState({
-                text: this.props.text.slice(0, 11).concat('...'),
-                moreInfo: true
+                shortPackName: this.props.packName.slice(0, 11).concat('...'),
+                showTooltip: true
             })
         }
     }
 
     render() {
         return (
-            <li className='custom-collapse__collapse-elements__element' onMouseOver={this.mouseOverHandler} onMouseOut={this.mouseOutHandler}>
+            <li className='custom-collapse__collapse-elements__element'
+                onMouseOver={this.mouseOverHandler}
+                onMouseOut={this.mouseOutHandler}>
 
-                {this.state.moreInfo ? (<ArrowBox text={this.props.text} />) : null}
+                {this.state.showTooltip ? (<ArrowBox packName={this.props.packName} />) : null}
 
-                <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link d-flex align-items-center'>
+                <a href='javascript:void(0)'
+                    className='custom-collapse__collapse-elements__element__link d-flex align-items-center'>
                     <img src={require('../../assets/images/octopus.png')}
-                        alt="" width='30' height='30' style={{
-                            objectFit: 'contain',
-                            marginRight: '15px'
-                        }}></img>
-                    <span>{this.state.text}</span></a>
+                        alt="" width='30' height='30'
+                        style={{ objectFit: 'contain', marginRight: '15px' }} />
+                    <span>{this.state.shortPackName}</span>
+                </a>
             </li>
         )
     }
@@ -61,9 +76,8 @@ class StickerPackLink extends React.Component {
 
 const ArrowBox = (props) => {
     return (
-        <div className='custom-tooltip'>{props.text}</div>
+        <div className='custom-tooltip'>{props.packName}</div>
     )
 }
-
 
 export default StickerPackLink;
