@@ -66,7 +66,7 @@ class StickerPackLink extends React.Component {
                     className='custom-collapse__collapse-elements__element__link d-flex align-items-center'>
                     <img src={require('../../assets/images/octopus.png')}
                         alt="" width='30' height='30'
-                        style={{ objectFit: 'contain', marginRight: '15px' }} />
+                        style={{ objectFit: 'contain', marginRight: '8px' }} />
                     <span>{this.state.shortPackName}</span>
                 </a>
             </li>

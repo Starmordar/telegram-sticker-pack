@@ -60,6 +60,22 @@
     width: 100%;
 }
 
+.custom-collapse__collapse-elements__element:hover i {
+    color: white;
+    background: #00d7d2;
+}
+
+.custom-collapse__collapse-elements__element .create-new-icon {
+    color: #00d7d2;
+    background: transparent;
+    padding: 4px 5px;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 10px;
+    border-radius: 2px;
+    transition: all .3s linear;
+}
+
 .custom-collapse__collapse-elements__element .custom-collapse__collapse-elements__element__link {
     font-size: 15px;
     font-weight: 400;

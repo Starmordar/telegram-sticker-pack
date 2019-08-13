@@ -72,11 +72,8 @@ const CreateNewPack = (props) => {
     return (
         <li className='custom-collapse__collapse-elements__element'>
             <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link d-flex align-items-center'
-                style={{ color: 'rgb(15, 255, 179)' }}>
-                <i className="fas fa-plus-square" style={{
-                    marginRight: '15px',
-                    padding: '7.5px 8.5px'
-                }}></i>
+                style={{ color: '#00d7d2' }}>
+                <i className="fas fa-plus create-new-icon"></i>
                 <span style={{ fontSize: '15px' }}>New Pack</span></a>
         </li>
     )
