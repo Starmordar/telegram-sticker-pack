@@ -46,7 +46,7 @@ class NavSection extends React.Component {
 
 
     render() {
-        const text = ['StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad'];
+        const text = ['My stickerssssssd', 'StickerS quadS ticke rSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad'];
         return (
             <div className='custom-collapse'>
                 <div onClick={this.expandedAreaHandler} className='custom-collapse__collapse-trigger-wrapper' data-num={this.props.num}>
