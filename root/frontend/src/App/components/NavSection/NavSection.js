@@ -14,7 +14,7 @@ class NavSection extends React.Component {
         const el = e.currentTarget;
         let dataNum = e.currentTarget.dataset.num;
 
-        let elem = document.querySelector(`.expandable-elements[data-num="${dataNum}"]`);
+        let elem = document.querySelector(`.custom-collapse__collapse-elements[data-num="${dataNum}"]`);
 
         let icon = document.querySelector(`i[data-num="${dataNum}"]`);
 
@@ -48,12 +48,12 @@ class NavSection extends React.Component {
     render() {
         const text = ['StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad'];
         return (
-            <div className='expanded-element'>
-                <div onClick={this.expandedAreaHandler} className='expanded-element__expand-link-wrapper' data-num={this.props.num}>
-                    <a href='javascript:void(0)' className='expand-link'>YOURS PACKS</a>
+            <div className='custom-collapse'>
+                <div onClick={this.expandedAreaHandler} className='custom-collapse__collapse-trigger-wrapper' data-num={this.props.num}>
+                    <a href='javascript:void(0)' className='collapse-trigger'>YOURS PACKS</a>
                     <i className='fas fa-chevron-down' data-num={this.props.num}></i>
                 </div>
-                <ul className='expandable-elements hidden-section' data-num={this.props.num}>
+                <ul className='custom-collapse__collapse-elements hidden-section' data-num={this.props.num}>
                     {
                         text.map((val, index) => {
                             return (
@@ -70,8 +70,8 @@ class NavSection extends React.Component {
 
 const CreateNewPack = (props) => {
     return (
-        <li className='expandable-elements__element'>
-            <a href='javascript:void(0)' className='expandable-elements__element__link d-flex align-items-center'
+        <li className='custom-collapse__collapse-elements__element'>
+            <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link d-flex align-items-center'
                 style={{ color: 'rgb(15, 255, 179)' }}>
                 <i className="fas fa-plus-square" style={{
                     marginRight: '15px',
@@ -84,8 +84,8 @@ const CreateNewPack = (props) => {
 
 const ExpandElement = (props) => {
     return (
-        <li className='expandable-elements__element'>
-            <a href='javascript:void(0)' className='expandable-elements__element__link'>{props.text}</a>
+        <li className='custom-collapse__collapse-elements__element'>
+            <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link'>{props.text}</a>
         </li>
     )
 }

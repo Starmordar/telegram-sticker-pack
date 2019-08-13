@@ -20,7 +20,7 @@ class StickerPackLink extends React.Component {
     mouseOverHandler(e) {
         const scrollTopLinks = e.currentTarget.parentNode.scrollTop;
         const scrollTopNavbar = document.querySelector('.navbar-content').scrollTop
-        
+
         const topPosition = e.currentTarget.offsetTop + HALF_HEIGHT_OF_LINK - scrollTopNavbar - scrollTopLinks;
 
         e.currentTarget.firstChild.style.top = topPosition + 'px';
@@ -43,11 +43,11 @@ class StickerPackLink extends React.Component {
 
     render() {
         return (
-            <li className='expandable-elements__element' onMouseOver={this.mouseOverHandler} onMouseOut={this.mouseOutHandler}>
+            <li className='custom-collapse__collapse-elements__element' onMouseOver={this.mouseOverHandler} onMouseOut={this.mouseOutHandler}>
 
                 {this.state.moreInfo ? (<ArrowBox text={this.props.text} />) : null}
 
-                <a href='javascript:void(0)' className='expandable-elements__element__link d-flex align-items-center'>
+                <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link d-flex align-items-center'>
                     <img src={require('../../assets/images/octopus.png')}
                         alt="" width='30' height='30' style={{
                             objectFit: 'contain',
@@ -61,7 +61,7 @@ class StickerPackLink extends React.Component {
 
 const ArrowBox = (props) => {
     return (
-        <div className='arrow-box'>{props.text}</div>
+        <div className='custom-tooltip'>{props.text}</div>
     )
 }
 
