@@ -48,7 +48,9 @@ class StickerPackLink extends React.Component {
     componentDidMount() {
         if (this.props.packName.length > MAX_LENGTH_OF_DISPLAYED_NAME) {
             this.setState({
-                shortPackName: this.props.packName.slice(0, 11).concat('...'),
+                shortPackName: this.props.packName
+                    .slice(0, MAX_LENGTH_OF_DISPLAYED_NAME - 2)
+                    .concat('...'),
                 showTooltip: true
             })
         }
@@ -60,7 +62,7 @@ class StickerPackLink extends React.Component {
                 onMouseOver={this.mouseOverHandler}
                 onMouseOut={this.mouseOutHandler}>
 
-                {this.state.showTooltip ? (<ArrowBox packName={this.props.packName} />) : null}
+                {this.state.showTooltip ? (<Tooltip packName={this.props.packName} />) : null}
 
                 <a href='javascript:void(0)'
                     className='custom-collapse__collapse-elements__element__link d-flex align-items-center'>
@@ -74,7 +76,7 @@ class StickerPackLink extends React.Component {
     }
 }
 
-const ArrowBox = (props) => {
+const Tooltip = (props) => {
     return (
         <div className='custom-tooltip'>{props.packName}</div>
     )
