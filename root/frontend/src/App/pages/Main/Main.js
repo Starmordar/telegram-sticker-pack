@@ -9,8 +9,6 @@ class Main extends React.Component {
 
     }
 
-
-
     render() {
         return (
             <div className='left-side-navbar dark-blue'>
@@ -27,6 +25,14 @@ class Main extends React.Component {
             </div>
         )
     }
+}
+
+const ExpandElement = (props) => {
+    return (
+        <li className='custom-collapse__collapse-elements__element'>
+            <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link'>{props.packName}</a>
+        </li>
+    )
 }
 
 export default Main;

@@ -46,7 +46,7 @@ class NavSection extends React.Component {
 
 
     render() {
-        const text = ['My stickerssssssd', 'StickerS quadS ticke rSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad'];
+        const text = ['StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad'];
         return (
             <div className='custom-collapse'>
                 <div onClick={this.expandedAreaHandler} className='custom-collapse__collapse-trigger-wrapper' data-num={this.props.num}>
@@ -75,14 +75,6 @@ const CreateNewPack = (props) => {
                 style={{ color: '#00d7d2' }}>
                 <i className="fas fa-plus create-new-icon"></i>
                 <span style={{ fontSize: '15px' }}>New Pack</span></a>
-        </li>
-    )
-}
-
-const ExpandElement = (props) => {
-    return (
-        <li className='custom-collapse__collapse-elements__element'>
-            <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link'>{props.packName}</a>
         </li>
     )
 }
