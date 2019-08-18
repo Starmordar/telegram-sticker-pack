@@ -46,9 +46,19 @@ class NavSection extends React.Component {
 
 
     render() {
-        const text = ['StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad', 'StickerSquad'];
+        const text = ['StickerSquadStickerSquad',
+            'StickerSquadStickerSquad',
+            'StickerSquadStickerSquad',
+            'StickerSquadStickerSquad',
+            'StickerSquadStickerSquad',
+            'StickerSquad',
+            'StickerSquad',
+            'StickerSquad',
+            'StickerSquad'];
+
         return (
-            <div className='custom-collapse'>
+            <div className='navbar-section'>
+                
                 <div onClick={this.expandedAreaHandler} className='custom-collapse__collapse-trigger-wrapper' data-num={this.props.num}>
                     <a href='javascript:void(0)' className='collapse-trigger'>YOURS PACKS</a>
                     <i className='fas fa-chevron-down' data-num={this.props.num}></i>

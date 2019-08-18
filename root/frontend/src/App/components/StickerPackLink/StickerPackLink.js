@@ -10,9 +10,10 @@ class StickerPackLink extends React.Component {
         super(props);
 
         this.state = {
-            shortPackName: this.props.packName,
             showTooltip: false
         }
+
+        this.spanRef = React.createRef();
 
         this.mouseOverHandler = this.mouseOverHandler.bind(this);
         this.mouseOutHandler = this.mouseOutHandler.bind(this);
@@ -46,13 +47,10 @@ class StickerPackLink extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.packName.length > MAX_LENGTH_OF_DISPLAYED_NAME) {
-            this.setState({
-                shortPackName: this.props.packName
-                    .slice(0, MAX_LENGTH_OF_DISPLAYED_NAME - 2)
-                    .concat('...'),
-                showTooltip: true
-            })
+        const ellipsisText = this.spanRef.current;
+
+        if (ellipsisText.offsetWidth < ellipsisText.scrollWidth) {
+            this.setState({ showTooltip: true })
         }
     }
 
@@ -66,17 +64,19 @@ class StickerPackLink extends React.Component {
 
                 <a href='javascript:void(0)'
                     className='custom-collapse__collapse-elements__element__link d-flex align-items-center'>
+
                     <img src={require('../../assets/images/octopus.png')}
-                        alt="" width='30' height='30'
-                        style={{ objectFit: 'contain', marginRight: '8px' }} />
-                    <span>{this.state.shortPackName}</span>
+                        alt="" width='30' height='30' className='nav-link-icon' />
+                        
+                    <span ref={this.spanRef} className='ellipsis-text'>{this.props.packName}</span>
+
                 </a>
             </li>
         )
     }
 }
 
-const Tooltip = (props) => {
+function Tooltip(props) {
     return (
         <div className='custom-tooltip'>{props.packName}</div>
     )

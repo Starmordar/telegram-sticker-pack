@@ -1,0 +1,39 @@
+.nav-link-icon {
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.ellipsis-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 500px;
+    padding: 5px;
+    font-size: 13px;
+    text-align: center;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, .85);
+    border-radius: 4px;
+    display: none;
+}
+
+.custom-tooltip::after {
+    content: " ";
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    height: 0;
+    width: 0;
+    border: solid transparent;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, .8);
+    border-width: 5px;
+    margin-top: -5px;
+}

@@ -1,4 +1,4 @@
-.custom-collapse {
+.navbar-section {
     border-bottom: 1px rgba(180, 188, 199, .32) solid;
     transition: padding .2s linear .1s;
 }
@@ -86,6 +86,12 @@
     width: 100%;
 }
 
+span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .custom-collapse__collapse-elements__element .custom-collapse__collapse-elements__element__link:hover {
     text-decoration: none;
     background: rgb(20, 52, 128);
@@ -95,37 +101,6 @@
     border-bottom: none;
 }
 
-.custom-tooltip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 110px;
-    white-space: nowrap;
-    max-width: 500px;
-    padding: 5px;
-    font-size: 13px;
-    text-align: center;
-    background: rgba(0, 0, 0, .85);
-    border-radius: 4px;
-    display: none;
-}
-
-.custom-tooltip::after {
-    content: " ";
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    height: 0;
-    width: 0;
-    border: solid transparent;
-    pointer-events: none;
-    border-color: rgba(0, 0, 0, 0);
-    border-right-color: rgba(0, 0, 0, .8);
-    border-width: 5px;
-    margin-top: -5px;
-}
-
-
 .overflow {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -134,11 +109,12 @@
     height: 100%;
     position: relative;
     -webkit-overflow-scrolling: touch;
-  }
-  .thumb {
+}
+
+.thumb {
     width: 20px;
     background-image: linear-gradient(90deg, transparent, magenta, red, yellow, limegreen, turquoise, blue, magenta, transparent);
     background-position: center bottom, center -40px;
     background-repeat: no-repeat, no-repeat;
     background-size: contain, contain;
-  }
+}
