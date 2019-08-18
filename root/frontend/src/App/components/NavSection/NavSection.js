@@ -14,7 +14,7 @@ class NavSection extends React.Component {
         const el = e.currentTarget;
         let dataNum = e.currentTarget.dataset.num;
 
-        let elem = document.querySelector(`.custom-collapse__collapse-elements[data-num="${dataNum}"]`);
+        let elem = document.querySelector(`.custom-collapse[data-num="${dataNum}"]`);
 
         let icon = document.querySelector(`i[data-num="${dataNum}"]`);
 
@@ -58,12 +58,15 @@ class NavSection extends React.Component {
 
         return (
             <div className='navbar-section'>
-                
-                <div onClick={this.expandedAreaHandler} className='custom-collapse__collapse-trigger-wrapper' data-num={this.props.num}>
+
+                <div onClick={this.expandedAreaHandler}
+                    className='collapse-trigger-wrapper'
+                    data-num={this.props.num}>
                     <a href='javascript:void(0)' className='collapse-trigger'>YOURS PACKS</a>
                     <i className='fas fa-chevron-down' data-num={this.props.num}></i>
                 </div>
-                <ul className='custom-collapse__collapse-elements hidden-section' data-num={this.props.num}>
+
+                <ul className='custom-collapse hidden-section' data-num={this.props.num}>
                     {
                         text.map((val, index) => {
                             return (
@@ -73,6 +76,7 @@ class NavSection extends React.Component {
                     }
                     <CreateNewPack />
                 </ul>
+                
             </div>
         )
     }
@@ -80,8 +84,8 @@ class NavSection extends React.Component {
 
 const CreateNewPack = (props) => {
     return (
-        <li className='custom-collapse__collapse-elements__element'>
-            <a href='javascript:void(0)' className='custom-collapse__collapse-elements__element__link d-flex align-items-center'
+        <li className='custom-collapse__element'>
+            <a href='javascript:void(0)' className='custom-collapse__element__link d-flex align-items-center'
                 style={{ color: '#00d7d2' }}>
                 <i className="fas fa-plus create-new-icon"></i>
                 <span style={{ fontSize: '15px' }}>New Pack</span></a>

@@ -56,14 +56,14 @@ class StickerPackLink extends React.Component {
 
     render() {
         return (
-            <li className='custom-collapse__collapse-elements__element'
+            <li className='custom-collapse__element'
                 onMouseOver={this.mouseOverHandler}
                 onMouseOut={this.mouseOutHandler}>
 
                 {this.state.showTooltip ? (<Tooltip packName={this.props.packName} />) : null}
 
                 <a href='javascript:void(0)'
-                    className='custom-collapse__collapse-elements__element__link d-flex align-items-center'>
+                    className='custom-collapse__element__link d-flex align-items-center'>
 
                     <img src={require('../../assets/images/octopus.png')}
                         alt="" width='30' height='30' className='nav-link-icon' />
