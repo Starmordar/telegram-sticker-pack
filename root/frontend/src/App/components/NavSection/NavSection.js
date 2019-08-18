@@ -7,39 +7,38 @@ class NavSection extends React.Component {
     constructor(props) {
         super(props);
 
-        this.expandedAreaHandler = this.expandedAreaHandler.bind(this);
+        this.clickHander = this.clickHander.bind(this);
     }
 
-    expandedAreaHandler(e) {
-        const el = e.currentTarget;
-        let dataNum = e.currentTarget.dataset.num;
+    clickHander(e) {
+        const eventTrigger = e.currentTarget,
+            uniqueID = eventTrigger.dataset.num;
 
-        let elem = document.querySelector(`.custom-collapse[data-num="${dataNum}"]`);
+        const collapse = document.querySelector(`.custom-collapse[data-num="${uniqueID}"]`),
+            arrowIcon = document.querySelector(`i[data-num="${uniqueID}"]`);
 
-        let icon = document.querySelector(`i[data-num="${dataNum}"]`);
+        if (collapse.classList.contains("hidden-section")) {
 
-        if (elem.classList.contains("hidden-section")) {
+            arrowIcon.classList.remove('fa-chevron-down');
+            arrowIcon.classList.add('fa-chevron-up');
 
-            icon.classList.remove('fa-chevron-down');
-            icon.classList.add('fa-chevron-up');
+            collapse.classList.remove("hidden-section");
+            collapse.classList.add("open-section");
 
-            elem.classList.remove("hidden-section");
-            elem.classList.add("open-section");
-
-            elem.parentNode.classList.add('open-element');
-            el.classList.add('open-link');
+            collapse.parentNode.classList.add('open-element');
+            eventTrigger.classList.add('open-link');
 
         } else {
 
-            icon.classList.remove('fa-chevron-up');
-            icon.classList.add('fa-chevron-down');
+            arrowIcon.classList.remove('fa-chevron-up');
+            arrowIcon.classList.add('fa-chevron-down');
 
-            elem.classList.remove("open-section");
-            elem.classList.add("hidden-section");
+            collapse.classList.remove("open-section");
+            collapse.classList.add("hidden-section");
 
-            elem.parentNode.classList.remove('open-element');
+            collapse.parentNode.classList.remove('open-element');
 
-            setTimeout(() => { el.classList.remove('open-link'); }, 400);
+            setTimeout(() => { eventTrigger.classList.remove('open-link'); }, 400);
 
         }
     }
@@ -59,7 +58,7 @@ class NavSection extends React.Component {
         return (
             <div className='navbar-section'>
 
-                <div onClick={this.expandedAreaHandler}
+                <div onClick={this.clickHander}
                     className='collapse-trigger-wrapper'
                     data-num={this.props.num}>
                     <a href='javascript:void(0)' className='collapse-trigger'>YOURS PACKS</a>
@@ -76,7 +75,7 @@ class NavSection extends React.Component {
                     }
                     <CreateNewPack />
                 </ul>
-                
+
             </div>
         )
     }
