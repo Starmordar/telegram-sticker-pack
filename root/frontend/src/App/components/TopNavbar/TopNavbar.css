@@ -14,15 +14,15 @@
 }
 
 .navbar .search-form .search-form__input:focus {
-    box-shadow: 0 4px 2px -2px blue;
+    box-shadow: 0 4px 2px -3px #6565ee;
 }
 
-.navbar .search-form .svg-icon{
-   position: absolute;
-   left: 25px;
+.navbar .search-form .svg-icon {
+    position: absolute;
+    /* left: 25px; */
 }
 
-.avatar {
+.nav-item .avatar-link .avatar {
     vertical-align: middle;
     width: 40px;
     height: 40px;
@@ -42,6 +42,7 @@
     border: 1px solid #15CD72;
     padding: 10px 25px;
     font-size: 15px;
+    letter-spacing: .5px;
 }
 
 .nav-item .create-button:hover {
