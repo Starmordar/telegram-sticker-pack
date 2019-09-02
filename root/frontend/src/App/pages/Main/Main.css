@@ -1,3 +1,12 @@
+.left-side {
+    width: 200px;
+}
+.right-side {
+    position: absolute;
+    width: 100%;
+    padding-left: 200px;
+}
+
 .left-side-navbar {
     font-family: 'Montserrat', sans-serif;
     position: fixed !important;
