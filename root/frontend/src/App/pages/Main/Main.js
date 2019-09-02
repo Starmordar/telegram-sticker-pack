@@ -11,6 +11,25 @@ class Main extends React.Component {
     }
 
     render() {
+        const textContent = [{
+            dataNumber: 1,
+            head: 'YOUR PACKS',
+            content: ['StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquad', 'StickerSquad'],
+            isInfo: false
+        },
+        {
+            dataNumber: 2,
+            head: 'MANAGE',
+            content: ['Mix packs', 'Change', 'Delete'],
+            isInfo: true
+        },
+        {
+            dataNumber: 3,
+            head: 'ACCOUNT',
+            content: ['Profile', 'Notification'],
+            isInfo: true
+        }]
+
         return (
             <>
                 <div className='left-side'>
@@ -20,10 +39,17 @@ class Main extends React.Component {
                                 <a href='/' className='brand-name'>Sticker Squad</a>
                             </div>
 
-                            <NavSection num={1} />
-                            <NavSection num={2} />
-                            <NavSection num={3} />
-                            <NavSection num={4} />
+                            {
+                                textContent.map((val, index) => {
+                                    return <NavSection
+                                        num={val.dataNumber}
+                                        content={val.content}
+                                        head={val.head}
+                                        isInfo={val.isInfo}
+                                        key={index} />
+                                })
+                            }
+
                         </div>
                     </div>
                 </div>
@@ -33,14 +59,6 @@ class Main extends React.Component {
             </>
         )
     }
-}
-
-const ExpandElement = (props) => {
-    return (
-        <li className='custom-collapse__element'>
-            <a href='javascript:void(0)' className='custom-collapse__element__link'>{props.packName}</a>
-        </li>
-    )
 }
 
 export default Main;

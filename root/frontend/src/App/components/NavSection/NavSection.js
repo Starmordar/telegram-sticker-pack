@@ -45,15 +45,22 @@ class NavSection extends React.Component {
 
 
     render() {
-        const text = ['StickerSquadStickerSquad',
-            'StickerSquadStickerSquad',
-            'StickerSquadStickerSquad',
-            'StickerSquadStickerSquad',
-            'StickerSquadStickerSquad',
-            'StickerSquad',
-            'StickerSquad',
-            'StickerSquad',
-            'StickerSquad'];
+        let content;
+
+        if (this.props.isInfo) {
+            content = this.props.content.map((val, index) => {
+                return (
+                    <ExpandElement key={index} packName={val} />
+                )
+            })
+        } else {
+            content = this.props.content.map((val, index) => {
+                return (
+                    <StickerPackLink key={index} packName={val} />
+                )
+            })
+            content.push(<CreateNewPack key={9999}/>);
+        }
 
         return (
             <div className='navbar-section'>
@@ -61,19 +68,12 @@ class NavSection extends React.Component {
                 <div onClick={this.clickHander}
                     className='collapse-trigger-wrapper'
                     data-num={this.props.num}>
-                    <a href='javascript:void(0)' className='collapse-trigger'>YOURS PACKS</a>
+                    <a href='javascript:void(0)' className='collapse-trigger'>{this.props.head}</a>
                     <i className='fas fa-chevron-down' data-num={this.props.num}></i>
                 </div>
 
                 <ul className='custom-collapse hidden-section' data-num={this.props.num}>
-                    {
-                        text.map((val, index) => {
-                            return (
-                                <StickerPackLink key={index} packName={val} />
-                            )
-                        })
-                    }
-                    <CreateNewPack />
+                    {content}
                 </ul>
 
             </div>
@@ -81,6 +81,14 @@ class NavSection extends React.Component {
     }
 }
 
+
+const ExpandElement = (props) => {
+    return (
+        <li className='custom-collapse__element'>
+            <a href='javascript:void(0)' className='custom-collapse__element__link'>{props.packName}</a>
+        </li>
+    )
+}
 const CreateNewPack = (props) => {
     return (
         <li className='custom-collapse__element'>
