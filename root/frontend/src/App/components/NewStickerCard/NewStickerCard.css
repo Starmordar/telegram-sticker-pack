@@ -31,17 +31,9 @@
     transition: all .3s linear;
 }
 
-.sticker-card:hover .border-dark .dashed-border {
-    /* border: 2px dashed #58cd72; */
-}
-
 .sticker-card:hover .border-dark .air-plane {
     animation-play-state: running !important;
     opacity: 1;
-}
-
-.sticker-card:hover .border-dark .sticker-card__plus-section .sticker-card__plus {
-    /* color: #58cd72; */
 }
 
 .sticker-card__plus-section .sticker-card__plus {
