@@ -11,32 +11,60 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    border: 2px solid gray;
     height: 100%;
     border-radius: 5px;
+    color: #ffffff;
+    background-image: linear-gradient(to left bottom, #061b4d, #1f2359, #322c65, #443470, #563d7c);
     padding: 10px 20px;
+    transition: all .4s linear;
+}
+
+.dashed-border {
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px dashed #ffffff;
+    border-radius: 50%;
+    transition: all .3s linear;
+}
+
+.sticker-card:hover .border-dark .dashed-border {
+    /* border: 2px dashed #58cd72; */
+}
+
+.sticker-card:hover .border-dark .air-plane {
+    animation-play-state: running !important;
+    opacity: 1;
+}
+
+.sticker-card:hover .border-dark .sticker-card__plus-section .sticker-card__plus {
+    /* color: #58cd72; */
 }
 
 .sticker-card__plus-section .sticker-card__plus {
     position: absolute;
-    font-size: 50px;
+    font-size: 60px;
     width: 90px;
     height: 90px;
+    border-radius: 50%;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px dashed black;
-    border-radius: 50%;
+    transition: all .3s linear;
 }
 
 .sticker-card__plus-section .sticker-card__plus::before {
     position: absolute;
     top: 15px;
-    left: 20px;
+    left: 19px;
 }
 
 .sticker-card__text-wrapper {
     position: relative;
+    text-align: center;
 }
 
 .sticker-card__text-wrapper {
@@ -46,4 +74,32 @@
 .sticker-card__text-wrapper .sticker-card__text-wrapper__text {
     font-family: 'Blinker', sans-serif;
     font-size: 1.4rem;
+}
+
+.circle-motion {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    top: 5%;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.air-plane {
+    position: absolute;
+    left: 36%;
+    top: 40%;
+    animation: circleMotion 4s linear infinite;
+    color: #e3dee4;
+    opacity: 0;
+    transition: all 1s linear;
+}
+
+@keyframes circleMotion {
+    from {
+        transform: rotate(360deg) translateX(75px);
+    }
+    to {
+        transform: rotate(0deg) translateX(75px);
+    }
 }

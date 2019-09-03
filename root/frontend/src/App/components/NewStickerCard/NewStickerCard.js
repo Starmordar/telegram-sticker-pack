@@ -13,6 +13,13 @@ class NewStickerCard extends React.Component {
                 <div className='border-dark'>
 
                     <div className='sticker-card__plus-section'>
+                        <div className='dashed-border'>
+
+                            <div className='air-plane'>
+                                <i className="fa fa-paper-plane fa-lg replace"></i>
+                            </div>
+
+                        </div>
                         <i className="fas fa-plus sticker-card__plus"></i>
                     </div>
 
