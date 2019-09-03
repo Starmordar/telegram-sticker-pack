@@ -7,7 +7,16 @@ class NavSection extends React.Component {
     constructor(props) {
         super(props);
 
+        this.container = React.createRef();
+
         this.clickHander = this.clickHander.bind(this);
+
+        this.state = {
+            arrowIcon: '',
+            collapseSection: '',
+            navbarSection: '',
+            collapseTrigger: ''
+        }
     }
 
     clickHander(e) {
@@ -43,6 +52,22 @@ class NavSection extends React.Component {
         }
     }
 
+    componentWillMount() {
+        if (this.props.isOpen) {
+            this.setState({
+                arrowIcon: 'fa-chevron-up',
+                collapseSection: 'open-section',
+                navbarSection: 'open-element',
+                collapseTrigger: 'open-link'
+            })
+        } else {
+            this.setState({
+                arrowIcon: 'fa-chevron-down',
+                collapseSection: 'hidden-section'
+            })
+        }
+    }
+
 
     render() {
         let content;
@@ -59,20 +84,21 @@ class NavSection extends React.Component {
                     <StickerPackLink key={index} packName={val} />
                 )
             })
-            content.push(<CreateNewPack key={9999}/>);
+            content.push(<CreateNewPack key={9999} />);
         }
 
         return (
-            <div className='navbar-section'>
+            <div className={'navbar-section ' + this.state.navbarSection}>
 
                 <div onClick={this.clickHander}
-                    className='collapse-trigger-wrapper'
-                    data-num={this.props.num}>
+                    className={'collapse-trigger-wrapper ' + this.state.collapseTrigger}
+                    data-num={this.props.num}
+                    ref={this.container}>
                     <a href='javascript:void(0)' className='collapse-trigger'>{this.props.head}</a>
-                    <i className='fas fa-chevron-down' data-num={this.props.num}></i>
+                    <i className={'fas ' + this.state.arrowIcon} data-num={this.props.num}></i>
                 </div>
 
-                <ul className='custom-collapse hidden-section' data-num={this.props.num}>
+                <ul className={'custom-collapse ' + this.state.collapseSection} data-num={this.props.num}>
                     {content}
                 </ul>
 

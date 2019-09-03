@@ -16,19 +16,22 @@ class Main extends React.Component {
             dataNumber: 1,
             head: 'YOUR PACKS',
             content: ['StickerSquadStickerSquad', 'StickerSquadStickerSquad', 'StickerSquad', 'StickerSquad'],
-            isInfo: false
+            isInfo: false,
+            isOpen: true
         },
         {
             dataNumber: 2,
             head: 'MANAGE',
             content: ['Mix packs', 'Change', 'Delete'],
-            isInfo: true
+            isInfo: true,
+            isOpen: false
         },
         {
             dataNumber: 3,
             head: 'ACCOUNT',
             content: ['Profile', 'Notification'],
-            isInfo: true
+            isInfo: true,
+            isOpen: false
         }]
 
         return (
@@ -47,6 +50,7 @@ class Main extends React.Component {
                                         content={val.content}
                                         head={val.head}
                                         isInfo={val.isInfo}
+                                        isOpen={val.isOpen}
                                         key={index} />
                                 })
                             }
