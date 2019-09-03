@@ -7,15 +7,28 @@ class NavSection extends React.Component {
     constructor(props) {
         super(props);
 
-        this.container = React.createRef();
-
         this.clickHander = this.clickHander.bind(this);
 
         this.state = {
             arrowIcon: '',
             collapseSection: '',
             navbarSection: '',
-            collapseTrigger: ''
+            collapseTriggerWrapper: ''
+        }
+
+        this.classNames = {
+            isOpen: {
+                arrowIcon: 'fa-chevron-up',
+                collapseSection: 'open-section',
+                navbarSection: 'open-element',
+                collapseTriggerWrapper: 'open-link'
+            },
+            isClose: {
+                arrowIcon: 'fa-chevron-down',
+                collapseSection: 'hidden-section',
+                navbarSection: '',
+                collapseTriggerWrapper: ''
+            }
         }
     }
 
@@ -23,16 +36,16 @@ class NavSection extends React.Component {
         const eventTrigger = e.currentTarget,
             uniqueID = eventTrigger.dataset.num;
 
-        const collapse = document.querySelector(`.custom-collapse[data-num="${uniqueID}"]`),
-            arrowIcon = document.querySelector(`i[data-num="${uniqueID}"]`);
+        const collapse = document.querySelector(`.custom-collapse[data-num='${uniqueID}']`),
+            arrowIcon = document.querySelector(`i[data-num='${uniqueID}']`);
 
-        if (collapse.classList.contains("hidden-section")) {
+        if (collapse.classList.contains('hidden-section')) {
 
             arrowIcon.classList.remove('fa-chevron-down');
             arrowIcon.classList.add('fa-chevron-up');
 
-            collapse.classList.remove("hidden-section");
-            collapse.classList.add("open-section");
+            collapse.classList.remove('hidden-section');
+            collapse.classList.add('open-section');
 
             collapse.parentNode.classList.add('open-element');
             eventTrigger.classList.add('open-link');
@@ -42,8 +55,8 @@ class NavSection extends React.Component {
             arrowIcon.classList.remove('fa-chevron-up');
             arrowIcon.classList.add('fa-chevron-down');
 
-            collapse.classList.remove("open-section");
-            collapse.classList.add("hidden-section");
+            collapse.classList.remove('open-section');
+            collapse.classList.add('hidden-section');
 
             collapse.parentNode.classList.remove('open-element');
 
@@ -53,19 +66,9 @@ class NavSection extends React.Component {
     }
 
     componentWillMount() {
-        if (this.props.isOpen) {
-            this.setState({
-                arrowIcon: 'fa-chevron-up',
-                collapseSection: 'open-section',
-                navbarSection: 'open-element',
-                collapseTrigger: 'open-link'
-            })
-        } else {
-            this.setState({
-                arrowIcon: 'fa-chevron-down',
-                collapseSection: 'hidden-section'
-            })
-        }
+        if (this.props.isOpen) this.setState(this.classNames.isOpen)
+
+        else this.setState(this.classNames.isClose)
     }
 
 
@@ -90,15 +93,17 @@ class NavSection extends React.Component {
         return (
             <div className={'navbar-section ' + this.state.navbarSection}>
 
-                <div onClick={this.clickHander}
-                    className={'collapse-trigger-wrapper ' + this.state.collapseTrigger}
-                    data-num={this.props.num}
-                    ref={this.container}>
+                <div className={'collapse-trigger-wrapper ' + this.state.collapseTriggerWrapper}
+                    onClick={this.clickHander}
+                    data-num={this.props.num}>
+
                     <a href='javascript:void(0)' className='collapse-trigger'>{this.props.head}</a>
                     <i className={'fas ' + this.state.arrowIcon} data-num={this.props.num}></i>
+
                 </div>
 
-                <ul className={'custom-collapse ' + this.state.collapseSection} data-num={this.props.num}>
+                <ul className={'custom-collapse ' + this.state.collapseSection}
+                    data-num={this.props.num}>
                     {content}
                 </ul>
 
@@ -120,7 +125,7 @@ const CreateNewPack = (props) => {
         <li className='custom-collapse__element'>
             <a href='javascript:void(0)' className='custom-collapse__element__link d-flex align-items-center'
                 style={{ color: '#00d7d2' }}>
-                <i className="fas fa-plus create-new-icon"></i>
+                <i className='fas fa-plus create-new-icon'></i>
                 <span style={{ fontSize: '15px' }}>New Pack</span></a>
         </li>
     )
