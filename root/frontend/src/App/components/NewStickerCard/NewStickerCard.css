@@ -1,0 +1,49 @@
+.sticker-card {
+    display: inline-block;
+    height: 300px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.border-dark {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 2px solid gray;
+    height: 100%;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.sticker-card__plus-section .sticker-card__plus {
+    position: absolute;
+    font-size: 50px;
+    width: 90px;
+    height: 90px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px dashed black;
+    border-radius: 50%;
+}
+
+.sticker-card__plus-section .sticker-card__plus::before {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.sticker-card__text-wrapper {
+    position: relative;
+}
+
+.sticker-card__text-wrapper {
+    margin-top: 60px;
+}
+
+.sticker-card__text-wrapper .sticker-card__text-wrapper__text {
+    font-family: 'Blinker', sans-serif;
+    font-size: 1.4rem;
+}

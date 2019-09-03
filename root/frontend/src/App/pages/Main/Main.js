@@ -3,6 +3,7 @@ import './Main.css';
 
 import NavSection from '../../components/NavSection/NavSection';
 import TopNavbar from '../../components/TopNavbar/TopNavbar';
+import NewStickerCard from '../../components/NewStickerCard/NewStickerCard';
 
 class Main extends React.Component {
     constructor(props) {
@@ -55,6 +56,21 @@ class Main extends React.Component {
                 </div>
                 <div className='right-side'>
                     <TopNavbar />
+
+                    <div className='pack-section'>
+                        <div className='container-fluid'>
+                            <div className='row'>
+                                    <NewStickerCard />
+                                    <NewStickerCard />
+                                    <NewStickerCard />
+                                    <NewStickerCard />
+                                    <NewStickerCard />
+                                    <NewStickerCard />
+                                    <NewStickerCard />
+                                    <NewStickerCard />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </>
         )

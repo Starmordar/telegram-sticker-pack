@@ -1,10 +1,12 @@
 .left-side {
     width: 200px;
 }
+
 .right-side {
     position: absolute;
     width: 100%;
     padding-left: 200px;
+    z-index: 1;
 }
 
 .left-side-navbar {
@@ -15,6 +17,7 @@
     top: 0;
     bottom: 0;
     left: 0;
+    z-index: 9999;
 }
 
 .dark-blue {
@@ -48,4 +51,8 @@
 .navbar-content .brand-name:hover {
     text-decoration: none;
     opacity: 1;
+}
+
+.pack-section{
+    margin: 40px 30px;
 }
