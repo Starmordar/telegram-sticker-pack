@@ -1,12 +1,12 @@
 .sticker-card {
     display: inline-block;
-    height: 300px;
+    height: 350px;
     margin-bottom: 25px;
-    cursor: pointer;
 }
 
 .border-dark {
     position: relative;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -4,6 +4,7 @@ import './Main.css';
 import NavSection from '../../components/NavSection/NavSection';
 import TopNavbar from '../../components/TopNavbar/TopNavbar';
 import NewStickerCard from '../../components/NewStickerCard/NewStickerCard';
+import StickerPack from '../../components/StickerPack/StickerPack';
 
 class Main extends React.Component {
     constructor(props) {
@@ -65,14 +66,11 @@ class Main extends React.Component {
                         <div className='container-fluid'>
                             <div className='row'>
                                     <NewStickerCard />
-                                    <NewStickerCard />
-                                    <NewStickerCard />
-                                    <NewStickerCard />
-                                    <NewStickerCard />
-                                    <NewStickerCard />
-                                    <NewStickerCard />
-                                    <NewStickerCard />
-                            </div>
+                                    <StickerPack image='https://slm-assets2.secondlife.com/assets/3806158/view_large/512x512%20PNG%20Landscape%20Texture%20-%20Sunrise%20Lake.jpg?1309205114'/>
+                                    <StickerPack image='https://image.freepik.com/free-vector/abstract-dynamic-pattern-wallpaper-vector_53876-59131.jpg'/>
+                                    <StickerPack image='https://i.imgur.com/j2hM7gw.jpg' />
+                                    <StickerPack image='https://i.warosu.org/data/biz/img/0106/88/1534254219061.jpg' />
+                                    </div>
                         </div>
                     </div>
                 </div>

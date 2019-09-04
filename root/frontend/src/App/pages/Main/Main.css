@@ -21,7 +21,7 @@
 }
 
 .dark-blue {
-    background: rgb(6, 27, 77);
+    background: linear-gradient(to left bottom, #061b4d, #1f2359, #322c65, #443470, #563d7c);;
 }
 
 .left-side-navbar .navbar-content {
