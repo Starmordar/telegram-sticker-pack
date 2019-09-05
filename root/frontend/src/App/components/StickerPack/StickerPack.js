@@ -16,7 +16,7 @@ class StickerPack extends React.Component {
                     </div>
 
                     <div className='pack-title-container'>
-                        <h4 className='pack-title-container__pack-title full-text'>StickerSquadStickerSquadStickerSquadStickerSquadStickerSquadStickerSquadStickerSquadStickerSquad</h4>
+                        <h4 className='pack-title-container__pack-title full-text'>Sticker Squad Sticker Squad Sticker Squad Sticker Squad Sticker Squad Sticker Squad Sticker Squad Sticker Squad</h4>
                     </div>
 
                     <div className='button-container'>

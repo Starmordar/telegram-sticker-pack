@@ -1,16 +1,16 @@
 .background-wall {
     position: relative;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     height: 100%;
     border-radius: 5px;
+    padding: 10px 20px;
     background-repeat: no-repeat;
     background-size: cover;
     color: #ffffff;
-    padding: 10px 20px;
+    cursor: pointer;
 }
 
 .background-wall::after {
@@ -72,33 +72,35 @@
 .button-container .change-pack-btn {
     position: relative;
     border: none !important;
-    background: url('../../assets/images/btn_white.png');
-    background-size: cover;
     transition: all .4s linear;
     padding: 10px 20px;
+    border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     letter-spacing: 1px;
-    color: brown;
+    color: white;
     margin-bottom: 20px;
-}
-
-.button-container .change-pack-btn::before {
-    content: '';
-    position: absolute;
-    height: 98%;
-    width: 3px;
-    top: 1px;
-    left: -1px;
-    background: url('../../assets/images/btn_white_left.png');
+    border: 2px solid white !important; 
+    background: transparent;
+    transition: all .3s linear;
 }
 
 .button-container .change-pack-btn::after {
     content: '';
     position: absolute;
-    height: 99%;
-    width: 3px;
+    height: 100%;
+    width: 0%;
     top: 0;
-    right: -1px;
-    background: url('../../assets/images/btn_white_right.png');
+    left: 0;
+    background: white;
+    transition: all .3s linear;
+    z-index: -1;
+}
+
+.background-wall:hover .button-container .change-pack-btn::after {
+    width: 100%;
+}
+
+.background-wall:hover .button-container .change-pack-btn {
+    color: rgb(36, 37, 92);
 }
