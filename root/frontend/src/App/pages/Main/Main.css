@@ -9,50 +9,6 @@
     z-index: 1;
 }
 
-.left-side-navbar {
-    font-family: 'Montserrat', sans-serif;
-    position: fixed !important;
-    width: 200px;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
-}
-
-.dark-blue {
-    background: linear-gradient(to left bottom, #061b4d, #1f2359, #322c65, #443470, #563d7c);;
-}
-
-.left-side-navbar .navbar-content {
-    height: 100%;
-    display: flex;
-    flex-flow: nowrap;
-    flex-direction: column;
-    padding: 20px 0 0 0;
-    color: white;
-    overflow-y: auto;
-}
-
-.left-side-navbar .brand-wrapper {
-    margin-bottom: 10px;
-}
-
-.navbar-content .brand-name {
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-    margin-left: 20px;
-    opacity: .73;
-    transition: opacity .4s linear;
-}
-
-.navbar-content .brand-name:hover {
-    text-decoration: none;
-    opacity: 1;
-}
-
 .pack-section{
     margin: 40px 30px;
 }
