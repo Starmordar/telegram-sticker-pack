@@ -3,7 +3,7 @@ import './StickerPackForm.css';
 
 import LeftNavbar from '../../components/LeftNavbar/LeftNavbar';
 import TopNavbar from '../../components/TopNavbar/TopNavbar';
-import CreatePackForm from '../../components/CreatePackForm/CreatePackForm';
+import StickerSetDescription from '../../components/FormToCreateStickerSet/StickerSetDescription/StickerSetDescription';
 
 class StickerPackForm extends React.Component {
     constructor(props) {
@@ -47,7 +47,7 @@ class StickerPackForm extends React.Component {
                                     }
 
                                 </div>
-                                <CreatePackForm />
+                                <StickerSetDescription />
                             </div>
                         </div>
                     </div>
