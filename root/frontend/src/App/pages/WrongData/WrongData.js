@@ -1,52 +1,55 @@
-import React from 'react';
-import './WrongData.css'
+import React from "react";
+import "./WrongData.css";
 
 import SVGLaptop from "../../components/SVGLaptop/SVGLaptop";
 import GlitchHeader from "../../components/GlitchHeader/GlitchHeader";
 
 class WrongData extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            height: 0,
-            width: 0
-        }
+    this.state = {
+      height: 0,
+      width: 0,
+    };
 
-        this.updateSize = this.updateSize.bind(this);
-    }
+    this.updateSize = this.updateSize.bind(this);
+  }
 
-    updateSize(height, width) {
-        this.setState({
-            height: height,
-            width: width
-        });
-    }
+  updateSize(height, width) {
+    this.setState({
+      height: height,
+      width: width,
+    });
+  }
 
-    render() {
-        return (
-            <section className="someth-wrong">
-                <div className="container h-100">
-                    <div className='row justify-content-center align-items-center h-100'>
+  render() {
+    return (
+      <section className="someth-wrong">
+        <div className="container h-100">
+          <div className="row justify-content-center align-items-center h-100">
+            <div
+              className="svg-shadow"
+              style={{
+                height: this.state.height,
+                width: this.state.width,
+                borderRadius: (this.state.width + this.state.height) / 23,
+              }}
+            ></div>
 
-                        <div className='svg-shadow'
-                            style={{
-                                height: this.state.height,
-                                width: this.state.width,
-                                borderRadius: (this.state.width + this.state.height) / 23
-                            }}></div>
+            <div className="svg-container">
+              <SVGLaptop updateSize={this.updateSize} />
 
-                        <div className='svg-container'>
-                            <SVGLaptop updateSize={this.updateSize} />
-
-                            <GlitchHeader width={this.state.width} height={this.state.height} />
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-        )
-    }
+              <GlitchHeader
+                width={this.state.width}
+                height={this.state.height}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 }
 
 export default WrongData;

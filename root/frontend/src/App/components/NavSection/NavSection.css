@@ -1,93 +1,93 @@
 .navbar-section {
-    border-bottom: 1px rgba(180, 188, 199, .32) solid;
-    transition: padding .2s linear .1s;
+  border-bottom: 1px rgba(180, 188, 199, 0.32) solid;
+  transition: padding 0.2s linear 0.1s;
 }
 
 .navbar-section.open-element {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .custom-collapse {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    transition: all .4s linear;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.4s linear;
 }
 
 .custom-collapse.hidden-section {
-    max-height: 0;
-    overflow-y: hidden;
-    opacity: 0;
+  max-height: 0;
+  overflow-y: hidden;
+  opacity: 0;
 }
 
 .custom-collapse.open-section {
-    max-height: 500px;
-    overflow-y: auto;
-    opacity: 1;
+  max-height: 500px;
+  overflow-y: auto;
+  opacity: 1;
 }
 
 .collapse-trigger-wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    padding: 25px 20px;
-    line-height: .8rem;
-    font-size: 16px;
-    color: #677694;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 25px 20px;
+  line-height: 0.8rem;
+  font-size: 16px;
+  color: #677694;
+  cursor: pointer;
 }
 
 .collapse-trigger-wrapper.open-link {
-    padding-bottom: 14px;
+  padding-bottom: 14px;
 }
 
 .collapse-trigger-wrapper .collapse-trigger {
-    font-size: 0.8em;
-    font-weight: 600;
-    line-height: 1.3em;
-    letter-spacing: .06em;
-    color: #677694;
+  font-size: 0.8em;
+  font-weight: 600;
+  line-height: 1.3em;
+  letter-spacing: 0.06em;
+  color: #677694;
 }
 
 .collapse-trigger-wrapper .collapse-trigger:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .custom-collapse__element {
-    width: 100%;
+  width: 100%;
 }
 
 .custom-collapse__element:hover i {
-    color: white;
-    background: #00d7d2;
+  color: white;
+  background: #00d7d2;
 }
 
 .custom-collapse__element .create-new-icon {
-    color: #00d7d2;
-    background: transparent;
-    padding: 4px 5px;
-    font-size: 14px;
-    margin-left: 5px;
-    margin-right: 10px;
-    border-radius: 2px;
-    transition: all .3s linear;
+  color: #00d7d2;
+  background: transparent;
+  padding: 4px 5px;
+  font-size: 14px;
+  margin-left: 5px;
+  margin-right: 10px;
+  border-radius: 2px;
+  transition: all 0.3s linear;
 }
 
 .custom-collapse__element .custom-collapse__element__link {
-    font-size: 15px;
-    font-weight: 400;
-    white-space: nowrap;
-    display: flex;
-    padding: 8px 20px;
-    color: white;
-    width: 100%;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  display: flex;
+  padding: 8px 20px;
+  color: white;
+  width: 100%;
 }
 
 .custom-collapse__element .custom-collapse__element__link:hover {
-    text-decoration: none;
-    background: rgb(20, 52, 128);
+  text-decoration: none;
+  background: rgb(20, 52, 128);
 }
 
 .custom-collapse:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }

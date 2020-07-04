@@ -1,55 +1,55 @@
 .form-section {
-    margin: 40px 30px;
-    min-height: 60vh;
+  margin: 40px 30px;
+  min-height: 60vh;
 }
 
 .form-section .form-step-container {
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .form-step {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    text-align: center;
-    margin: 0 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+  margin: 0 15px;
 }
 
 .form-step.disabled {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .form-step.disabled .form-step__step-number {
-    color: #320351;
-    border: 2px solid #320351;
+  color: #320351;
+  border: 2px solid #320351;
 }
 
 .form-step.disabled .form-step__step-description {
-    color: #320351;
+  color: #320351;
 }
 
 .form-step .form-step__step-number {
-    font-family: 'Roboto Slab', serif;
-    margin: 0 auto;
-    height: 25px;
-    width: 25px;
-    font-size: 18px;
-    border-radius: 50%;
-    border: 2px solid #2e6fdf;
-    color: #2e6fdf;
-    margin: 0 10px;
+  font-family: "Roboto Slab", serif;
+  margin: 0 auto;
+  height: 25px;
+  width: 25px;
+  font-size: 18px;
+  border-radius: 50%;
+  border: 2px solid #2e6fdf;
+  color: #2e6fdf;
+  margin: 0 10px;
 }
 
 .form-step .form-step__step-description {
-    font-family: 'Blinker', sans-serif;
-    font-size: 18px;
-    letter-spacing: 0.5px;
-    color: #2e6fdf;
-    margin: 0;
+  font-family: "Blinker", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  color: #2e6fdf;
+  margin: 0;
 }

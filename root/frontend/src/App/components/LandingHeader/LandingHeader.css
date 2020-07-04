@@ -1,17 +1,17 @@
 .landing-info {
-    font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .landing-info__heading {
-    font-size: 1.1rem;
-    color: #4eb7fe;
-    letter-spacing: 0.8px;
-    margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #4eb7fe;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
 }
 
 .landing-info__subheader {
-    font-size: 1.4rem;
-    color: #ffffff;
-    letter-spacing: 1px;
-    line-height: 1.2
+  font-size: 1.4rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  line-height: 1.2;
 }

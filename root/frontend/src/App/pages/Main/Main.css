@@ -1,14 +1,14 @@
 .left-side {
-    width: 200px;
+  width: 200px;
 }
 
 .right-side {
-    position: absolute;
-    width: 100%;
-    padding-left: 200px;
-    z-index: 1;
+  position: absolute;
+  width: 100%;
+  padding-left: 200px;
+  z-index: 1;
 }
 
-.pack-section{
-    margin: 40px 30px;
+.pack-section {
+  margin: 40px 30px;
 }

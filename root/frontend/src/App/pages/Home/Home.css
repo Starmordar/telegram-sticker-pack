@@ -1,98 +1,140 @@
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 
 .landing {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: #1a2a87;
-    background: linear-gradient(to right bottom, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
-    background: -moz-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
-    background: -webkit-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2a87', endColorstr='#d7f7c5', GradientType=1);
-    height: auto;
-    min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #1a2a87;
+  background: linear-gradient(
+    to right bottom,
+    #1a2a87 0%,
+    #293a9c 9%,
+    #364bb1 18%,
+    #435dc7 27%,
+    #4f6fdd 36%,
+    #3188ed 45%,
+    #079ef8 55%,
+    #00b4ff 64%,
+    #00ccf2 73%,
+    #55dfdc 82%,
+    #9cecc9 91%,
+    #d7f7c5 100%
+  );
+  background: -moz-linear-gradient(
+    -45deg,
+    #1a2a87 0%,
+    #293a9c 9%,
+    #364bb1 18%,
+    #435dc7 27%,
+    #4f6fdd 36%,
+    #3188ed 45%,
+    #079ef8 55%,
+    #00b4ff 64%,
+    #00ccf2 73%,
+    #55dfdc 82%,
+    #9cecc9 91%,
+    #d7f7c5 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    #1a2a87 0%,
+    #293a9c 9%,
+    #364bb1 18%,
+    #435dc7 27%,
+    #4f6fdd 36%,
+    #3188ed 45%,
+    #079ef8 55%,
+    #00b4ff 64%,
+    #00ccf2 73%,
+    #55dfdc 82%,
+    #9cecc9 91%,
+    #d7f7c5 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2a87', endColorstr='#d7f7c5', GradientType=1);
+  height: auto;
+  min-height: 100vh;
 }
 
 .landing .landing__short-description {
-    margin-top: 25px;
-    width: 55%;
+  margin-top: 25px;
+  width: 55%;
 }
 
 .landing .landing__short-description__main-hero {
-    width: 70%;
-    height: 65%;
-    min-height: 400px;
-    min-width: 400px;
-    object-fit: contain;
+  width: 70%;
+  height: 65%;
+  min-height: 400px;
+  min-width: 400px;
+  object-fit: contain;
 }
 
 .landing .landing__call-to-action {
-    font-family: 'Blinker', sans-serif;
-    padding: 20px 20px 5px 20px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    width: 40%;
-    background: #ffffff;
-    border-radius: 10px;
-    -webkit-box-shadow: 3px 5px 26px -11px rgba(23, 23, 23, 1);
-    -moz-box-shadow: 3px 5px 26px -11px rgba(23, 23, 23, 1);
-    box-shadow: 3px 5px 26px -7px rgba(23, 23, 23, 1);
+  font-family: "Blinker", sans-serif;
+  padding: 20px 20px 5px 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 40%;
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 5px 26px -11px rgba(23, 23, 23, 1);
+  -moz-box-shadow: 3px 5px 26px -11px rgba(23, 23, 23, 1);
+  box-shadow: 3px 5px 26px -7px rgba(23, 23, 23, 1);
 }
 
 @media (max-width: 1024px) {
-    html {
-        font-size: 14px;
-    }
-    .landing .landing__short-description__main-hero {
-        min-height: 300px;
-        min-width: 300px;
-    }
-    .landing .landing__short-description {
-        width: 45%;
-    }
-    .landing .landing__call-to-action {
-        width: 55%;
-    }
+  html {
+    font-size: 14px;
+  }
+  .landing .landing__short-description__main-hero {
+    min-height: 300px;
+    min-width: 300px;
+  }
+  .landing .landing__short-description {
+    width: 45%;
+  }
+  .landing .landing__call-to-action {
+    width: 55%;
+  }
 }
 
 @media (max-width: 768px) {
-    .landing .landing__short-description__main-hero {
-        display: none;
-    }
-    .landing .landing__short-description {
-        width: 80%;
-        margin-bottom: 20px;
-    }
-    .landing .landing__call-to-action {
-        width: 80%;
-    }
+  .landing .landing__short-description__main-hero {
+    display: none;
+  }
+  .landing .landing__short-description {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .landing .landing__call-to-action {
+    width: 80%;
+  }
 }
 
 @media (max-width: 479px), (max-height: 479px) {
-    html {
-        font-size: 15px;
-    }
-    .landing .landing__call-to-action {
-        width: 90%;
-        padding: 10px 10px 2px 10px;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    .landing .landing__short-description {
-        margin-bottom: 10px;
-    }
+  html {
+    font-size: 15px;
+  }
+  .landing .landing__call-to-action {
+    width: 90%;
+    padding: 10px 10px 2px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .landing .landing__short-description {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 359px) {
-    html {
-        font-size: 14px;
-    }
+  html {
+    font-size: 14px;
+  }
 }

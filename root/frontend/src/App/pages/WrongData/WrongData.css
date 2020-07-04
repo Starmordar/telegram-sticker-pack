@@ -1,37 +1,79 @@
 .someth-wrong {
-    font-family: 'Blinker', sans-serif;
-    position: relative;
-    background: #1a2a87;
-    background: linear-gradient(to right bottom, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
-    background: -moz-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
-    background: -webkit-linear-gradient(-45deg, #1a2a87 0%, #293a9c 9%, #364bb1 18%, #435dc7 27%, #4f6fdd 36%, #3188ed 45%, #079ef8 55%, #00b4ff 64%, #00ccf2 73%, #55dfdc 82%, #9cecc9 91%, #d7f7c5 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2a87', endColorstr='#d7f7c5', GradientType=1);
-    min-height: 75vh !important;
-    height: 100vh;
+  font-family: "Blinker", sans-serif;
+  position: relative;
+  background: #1a2a87;
+  background: linear-gradient(
+    to right bottom,
+    #1a2a87 0%,
+    #293a9c 9%,
+    #364bb1 18%,
+    #435dc7 27%,
+    #4f6fdd 36%,
+    #3188ed 45%,
+    #079ef8 55%,
+    #00b4ff 64%,
+    #00ccf2 73%,
+    #55dfdc 82%,
+    #9cecc9 91%,
+    #d7f7c5 100%
+  );
+  background: -moz-linear-gradient(
+    -45deg,
+    #1a2a87 0%,
+    #293a9c 9%,
+    #364bb1 18%,
+    #435dc7 27%,
+    #4f6fdd 36%,
+    #3188ed 45%,
+    #079ef8 55%,
+    #00b4ff 64%,
+    #00ccf2 73%,
+    #55dfdc 82%,
+    #9cecc9 91%,
+    #d7f7c5 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    #1a2a87 0%,
+    #293a9c 9%,
+    #364bb1 18%,
+    #435dc7 27%,
+    #4f6fdd 36%,
+    #3188ed 45%,
+    #079ef8 55%,
+    #00b4ff 64%,
+    #00ccf2 73%,
+    #55dfdc 82%,
+    #9cecc9 91%,
+    #d7f7c5 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2a87', endColorstr='#d7f7c5', GradientType=1);
+  min-height: 75vh !important;
+  height: 100vh;
 }
 
 .svg-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 95%;
-    width: 95%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 95%;
+  width: 95%;
 }
 
 .svg-shadow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 0px;
-    width: 0px;
-    box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-    border-radius: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0px;
+  width: 0px;
+  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 60px;
 }
 
 @media (max-width: 479px), (max-height: 479px) {
-    .svg-shadow {
-        visibility: hidden;
-    }
+  .svg-shadow {
+    visibility: hidden;
+  }
 }
