@@ -21,7 +21,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --write \"src/**/*.js\" \"src/**/*.jsx\""
+    "prettier": "prettier --write ./src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prettier"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
