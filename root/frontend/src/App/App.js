@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import "./App.css";
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import './App.css';
 
-import Home from "./pages/Home/Home";
-import WrongData from "./pages/WrongData/WrongData";
-import Main from "./pages/Main/Main";
-import StickerPackForm from "./pages/StickerPackForm/StickerPackForm";
+import Home from './pages/Home/Home';
+import WrongData from './pages/WrongData/WrongData';
+import Main from './pages/Main/Main';
+import StickerPackForm from './pages/StickerPackForm/StickerPackForm';
 
 class App extends Component {
   render() {
