@@ -7,7 +7,7 @@ import WrongData from "./pages/WrongData/WrongData";
 import Main from "./pages/Main/Main";
 import StickerPackForm from "./pages/StickerPackForm/StickerPackForm";
 
-        class App extends Component {
+class App extends Component {
   render() {
     const App = () => (
       <div>

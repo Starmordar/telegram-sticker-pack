@@ -9,7 +9,6 @@
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "popper.js": "^1.15.0",
-    "prettier": "^2.0.5",
     "query-string": "^6.8.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -21,11 +20,19 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --write ./src"
+    "prettier": "prettier --write \"src/**/*.{jsx,js}\""
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run prettier"
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "\"src/**/*.{jsx,js}\"": [
+        "prettier --write",
+        "git add"
+      ]
     }
   },
   "eslintConfig": {
@@ -43,5 +50,10 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://167.71.13.201:8443"
+  "proxy": "http://167.71.13.201:8443",
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  }
 }
