@@ -28,12 +28,7 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "\"src/**/*.{jsx,js}\"": [
-        "prettier --write",
-        "git add"
-      ]
-    }
+    "./src/**/*.{js,css}": ["prettier --write", "git add"]
   },
   "eslintConfig": {
     "extends": "react-app"
